@@ -6,10 +6,12 @@ const Home = () => {
         <>
         <div className={styles.wrapper}>
           <Search />
+         
         </div>
-         <div>
-         <CardData />
-     </div>
+        <div >
+        <CardData />
+        </div>
+       
         </>
         
     );

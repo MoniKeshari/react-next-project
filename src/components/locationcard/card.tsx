@@ -1,8 +1,8 @@
 import React from 'react';
-
-interface cardType {
+import CardSummary, { cardarraytype } from './cardSummary';
+export interface cardType {
     id: number,
-    img: any,
+    img: string,
     name: string,
     desc: string
 
@@ -34,21 +34,21 @@ const CardData = () => {
         },
         {
             id: 4,
-            img: '/homeimg/img8.jpg',
+            img: './homeimg/img8.jpg',
             name: 'Tazmahal',
             desc: 'It is beautiful location'
 
         },
         {
             id: 5,
-            img: '/homeimg/img9.jpg',
+            img: './homeimg/img9.jpg',
             name: 'Tazmahal',
             desc: 'It is beautiful location'
 
         },
         {
             id: 6,
-            img: '/homeimg/img10.jpg',
+            img: './homeimg/img10.jpg',
             name: 'Tazmahal',
             desc: 'It is beautiful location'
 
@@ -62,33 +62,21 @@ const CardData = () => {
         },
 
     ]
-
-
     return (
         <>
-            {location.map((id) => {
-                return (
-                    <>
-                   
-                        <div className="row row-cols-1 row-cols-md-3 g-4">
-                            <div className="col-sm">
-                                <div className='card h-100'>
-                                    <img src={id.img} alt='' />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{id.name}</h5>
-                                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    </div>
-                                    <div className="card-footer">
-                                        <small className="text-muted">{id.desc}</small>
-                                    </div>
-                                </div>
-                            </div>
+            <section className='py-4 container'>
+                <div className='row justify-content-center'>
+                    {location.map((id, index) => {
+                        return (
+                            <>
+                                <CardSummary img={id.img} name={id.name} desc={id.desc} key={index} id={id.id} />
+                            </>
+                        )
+                    })}
 
-                        </div>
-                       
-                    </>
-                )
-            })}
+                </div>
+            </section>
+
         </>
     )
 }

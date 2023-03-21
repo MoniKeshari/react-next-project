@@ -1,11 +1,8 @@
-.card {
-    width: 100%;
-    margin-bottom: 20px;
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
   }
   
-  @media (min-width: 576px) {
-    .card {
-      flex: 0 0 calc(25% - 1rem);
-      max-width: calc(25% - 1rem);
-    }
-  }
+  
