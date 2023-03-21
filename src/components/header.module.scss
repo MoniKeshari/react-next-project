@@ -16,13 +16,7 @@ $color-7fffd4: #7fffd4;
 
 @media (min-width: 1280px) {
     .wrapper {
-        background-image: url('../../../public/homeimg/img1.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-        position: relative;
-        width: auto;
+        
 
         & ::before {
             position: absolute;
@@ -41,7 +35,7 @@ $color-7fffd4: #7fffd4;
             .heading {
                 h1 {
                     font-family: Arial, Helvetica, sans-serif;
-                    color: white;
+                    color: red;
                     @include common-fonts
                 }
 
@@ -65,7 +59,7 @@ $color-7fffd4: #7fffd4;
                 .servicing {
                     >div {
                         &.dropDown {
-                            color: white;
+                            color:red;
                             padding-left: 2rem;
                             margin-top: 2rem;
 
@@ -73,7 +67,7 @@ $color-7fffd4: #7fffd4;
 
                         .selectoption {
                             @include option-fonts;
-                            color: white;
+                            color: red;
 
                             option {
                                 color: black;
@@ -84,7 +78,7 @@ $color-7fffd4: #7fffd4;
 
                     span {
                         h3 {
-                            color: white;
+                            color: red;
                             padding-left: 2rem;
                             @include common-fonts
                         }
@@ -112,7 +106,7 @@ $color-7fffd4: #7fffd4;
 
 @media (max-width: 512px) {
     .wrapper {
-        background-image: url('../../../public/homeimg/img1.jpg');
+        background-image: url('../../public/homeimg/img1.jpg');
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -193,13 +187,13 @@ $color-7fffd4: #7fffd4;
 
 @media only screen and (min-width: 513px) and (max-width: 1280px) {
     .wrapper {
-        background-image: url('../../../public/homeimg/img1.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-        width: auto;
-        position: relative;
+        // background-image: url('../../public/homeimg/img1.jpg');
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // height: 100vh;
+        // width: auto;
+        // position: relative;
 
         & ::before {
             position: absolute;

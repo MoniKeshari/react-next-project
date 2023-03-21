@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './search.module.scss';
+import styles from './search.module.scss'
 const Search = () => {
     return (
-        <div className={styles.wrapper}>
+        <>
+         <div className={styles.wrapper}>
             <div className={styles.contentdata}>
                 <h1>
                     Find your perfect place.
@@ -17,6 +18,9 @@ const Search = () => {
                 <button>Search</button>
                 </div>
         </div>
+       
+        </>
+       
 
     )
 }
