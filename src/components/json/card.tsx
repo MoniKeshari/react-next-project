@@ -1,14 +1,6 @@
 
-export interface cardType {
-    id: number,
-    img: string,
-    name: string,
-    desc: string
 
-}
-type cardArray = cardType[];
-
-
+import {cardArray} from '../../../src/types/hometype'
 const location: cardArray = [
     {
         id: 1,

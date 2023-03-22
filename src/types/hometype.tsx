@@ -5,4 +5,4 @@ export interface cardType {
     desc: string
 
 }
-type cardArray = cardType[];
+export type cardArray = cardType[];
