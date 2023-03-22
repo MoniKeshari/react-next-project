@@ -3,8 +3,21 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color:black;
-    text-align: center;
+    background-color: black;
     padding: 1rem;
-    color:white
-  }
+    color: white;
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}

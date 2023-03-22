@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './search.module.scss'
-import CardData from './locationcard/card';
 const Search = () => {
     return (
         <>
