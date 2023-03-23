@@ -1,29 +1,32 @@
+@import './varialbesColor/variable.scss';
+
 .footer {
-    // position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: $bg-333-color;
     padding: 1rem;
-    color: white;
     display: flex;
     justify-content: space-around;
+   
 
-    ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
+  ul{
+    list-style: none;
+    
+    color: $white-color;
+    li {
+        svg {
+            color: $white-color;
+            font-size: 1rem;
 
-        li {
-            i {
-                color: white;
-                font-size: 1rem;
-            }
-
-            display: inline-block;
-            margin-right: 10px;
         }
+        color: $white-color;
+        margin-bottom: 10px;
     }
+
+  }
+    
+   
 
 
 }

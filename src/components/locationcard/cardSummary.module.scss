@@ -1,6 +1,15 @@
+@import '../varialbesColor/variable.scss';
+
 .cardData{
-    img{
-        height:100%;
-        width:100%
+    cursor: pointer;
+    img {
+        height: 100%;
+        width: 100%;
+        transition: transform 0.3s ease;
+       
     }
+
 }
+.cardData:hover img {
+    transform: scale(1.05);
+  }
