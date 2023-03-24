@@ -6,6 +6,7 @@ import Footer from "../components/footer";
 
 type LayoutProps = {
   children: ReactNode;
+  className?: string;
 };
 
 const Layout = ({ children }: LayoutProps) => {
