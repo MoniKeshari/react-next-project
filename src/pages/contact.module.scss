@@ -1,0 +1,66 @@
+@import '../components/varialbes/variable.scss';
+
+.formdata {
+    .contact {
+        h1 {
+            color: $white-color;
+        }
+    }
+    background-color: cadetblue;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+
+    form {
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            color: $white-color;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            border-color: $white-color;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    }
+}
+
+.imageBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+@media (max-width: 767px) {
+    .formdata{
+        height:400px;
+      
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        form{
+            button{
+                margin-top: 5px;
+            }
+        }
+
+    }
+    .imageBg {
+        height:400px;
+        border-top-right-radius: 0rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+    
+
+}

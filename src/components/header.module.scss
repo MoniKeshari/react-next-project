@@ -1,0 +1,28 @@
+@import './varialbes/variable.scss';
+.wrapper{
+   a{
+    color: $white-color;
+  
+        text-decoration: none;
+   
+   }
+   button{
+    span{
+        color: $white-color;
+    }
+   }
+   .content{
+    display: flex;
+    justify-content: flex-end;
+   }
+    >div{
+        ul{
+            li{
+                  padding: 1rem;
+                    color:$white-color;
+                 
+            }
+        }
+    }
+
+}

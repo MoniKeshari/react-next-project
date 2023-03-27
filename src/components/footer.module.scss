@@ -1,0 +1,35 @@
+@import './varialbes/variable.scss';
+
+
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $bg-333-color;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+
+
+    ul {
+      list-style: none;
+
+      color: $white-color;
+
+      li {
+        svg {
+          color: $white-color;
+          font-size: 1rem;
+
+        }
+
+        color: $white-color;
+        margin-bottom: 10px;
+      }
+
+    }
+
+
+
+
+  }
