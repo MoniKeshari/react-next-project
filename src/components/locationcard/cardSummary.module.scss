@@ -8,6 +8,30 @@
         transition: transform 0.3s ease;
        
     }
+   & .cardFooter{
+    display: flex;
+    justify-content: right;
+    small{
+        Button{
+            &.dec{
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+              }
+
+        }
+       Button{
+        &.inc{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+ 
+         }
+
+       }
+       
+    }
+       
+    }
+
 
 }
 .cardData:hover img {
