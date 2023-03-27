@@ -6,3 +6,10 @@ export interface cardType {
 
 }
 export type cardArray = cardType[];
+
+export interface User {
+    id: number;
+    name: string;
+    email: string;
+}
+

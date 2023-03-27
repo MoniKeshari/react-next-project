@@ -1,5 +1,6 @@
 "use client";  // this is a client component
-import styles from  '../components/header.module.scss';
+import styles from '../components/header.module.scss';
+import Link from 'next/link'
 const Header = () => {
     return (
         <>
@@ -12,13 +13,13 @@ const Header = () => {
                 <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            Home
+                            <Link href="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            About
+                            <Link href="/about">  About</Link>
                         </li>
                         <li className="nav-item">
-                          Contact
+                            <Link href="/contact">  Contact</Link>
                         </li>
                     </ul>
 
