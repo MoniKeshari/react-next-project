@@ -15,6 +15,13 @@ const Contact = () => {
         try {
             const data = await createUser(name, email, phone)
             setUser(data);
+            if (data) {
+                setName('');
+                setEmail('');
+                setUser('');
+                setPhone('');
+
+            }
         }
         catch (error) {
             console.error(error)
