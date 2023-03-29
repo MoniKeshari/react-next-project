@@ -18,6 +18,32 @@
     >div{
         ul{
             li{
+                .cart {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                  }
+                  
+                  .icon {
+                    font-size: 1.5rem;
+                    margin-right: 0.5rem;
+                  }
+                  
+                  .counter {
+                    background-color: red;
+                    color: white;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: -0.5rem;
+                    right: -0.5rem;
+                    font-size: 0.75rem;
+                    font-weight: bold;
+                  }
                   padding: 1rem;
                     color:$white-color;
                  

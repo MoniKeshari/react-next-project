@@ -1,15 +1,20 @@
 import React from 'react';
 import CardSummary from './cardSummary';
 import location from '../json/card'
+import { useAppSelector } from '@/ReduxToolkit/hooks';
+
 const CardData = () => {
+    const cart = useAppSelector((state) => state.counter.items)
+    console.log(cart, 'cart');
+    
     return (
         <>
             <section className='py-4 container'>
                 <div className='row justify-content-center'>
-                    {location.map((id, index) => {
+                    {cart.map((item, index) => {
                         return (
                             <>
-                                <CardSummary img={id.img} name={id.name} desc={id.desc} key={index} id={id.id} />
+                                  <CardSummary item={item} />
                             </>
                         )
                     })}
