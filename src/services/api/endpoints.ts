@@ -10,10 +10,10 @@ export const getUserById = async (id: number) => {
   return response.data;
 };
 
-export const createUser = async (name:any, email:any, phone:any) => {
-  const response = await client.post('/users', {name:name, email:email, phone:phone});
-  console.log(response, 'response');
-  
+export const createUser = async (name: any, email: any, phone: any) => {
+  const response = await client.post('/users', { name: name, email: email, phone: phone });
+
+
   return response.data;
 };
 

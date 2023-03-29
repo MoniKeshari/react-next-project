@@ -2,10 +2,18 @@
 import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useState } from 'react';
+import CartDetail from '../pages/cartdetails';
+import Link from 'next/link';
 const Header = () => {
+    const [show, setShow] = useState(false);
    
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
-        
+   
+    
+    const handleClick = () => {
+        setShow(true);
+    }
     return (
         <>
             <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
@@ -26,15 +34,24 @@ const Header = () => {
                             <a href="/contact">  Contact</a>
                         </li>
                         <li className="nav-item">
-                            <div className={styles.cart}>
-                                <div className={styles.counter}>  {itemCount > 0 && <span>{itemCount}</span>} </div>
-                                <FaShoppingCart className={styles.icon} />
-                            </div>
+
+                            <Link onClick={() => handleClick} href="/cartdetails">
+                                <div className={styles.cart}>
+
+                                    <div className={styles.counter}>
+
+                                        {itemCount > 0 && <span>{itemCount}</span>}  </div>
+                                    <FaShoppingCart className={styles.icon} />
+                                </div>
+                            </Link>
+
+
                         </li>
                     </ul>
 
                 </div>
             </nav>
+            {show && (<><CartDetail /></>)}
         </>
     )
 }
