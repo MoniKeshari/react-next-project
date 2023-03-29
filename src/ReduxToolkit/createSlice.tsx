@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import card from '../components/json/card'
+
 export interface Item {
     id: number;
     // other properties of an item, such as name, price, etc.
@@ -13,7 +13,7 @@ export interface Item {
   }
   
   const initialState: CartState = {
-    items: card, 
+    items: [], 
  
    
     // use the imported JSON data as the initial state
@@ -23,7 +23,6 @@ export interface Item {
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
-   
     reducers: {
         addToCart: (state, action: PayloadAction<Item>) => {
             const item: Item = action.payload;

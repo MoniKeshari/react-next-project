@@ -3,10 +3,8 @@ import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
 const Header = () => {
-    const cartItems = useAppSelector((state) => state.counter.items);
-    // const totalQuantity = cartItems.reduce((total, item) =>
-    //     total + item.quantity, 0);
-    //     console.log(totalQuantity, 'totalQuantity');
+   
+    const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
         
     return (
         <>
@@ -29,7 +27,7 @@ const Header = () => {
                         </li>
                         <li className="nav-item">
                             <div className={styles.cart}>
-                                <div className={styles.counter}></div>
+                                <div className={styles.counter}>  {itemCount > 0 && <span>{itemCount}</span>} </div>
                                 <FaShoppingCart className={styles.icon} />
                             </div>
                         </li>

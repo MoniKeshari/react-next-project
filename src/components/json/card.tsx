@@ -1,7 +1,7 @@
 
 
-import {cardArray} from '../../../src/types/hometype'
-const location: cardArray = [
+// import {cardArray} from '../../../src/types/hometype'
+const location: any = [
     {
         id: 1,
         img: "./homeimg/wc4.jpg",
