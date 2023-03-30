@@ -10,7 +10,7 @@ const Contact = () => {
     const [user, setUser] = useState('');
     const [phone, setPhone] = useState('');
 
-    const handleSubmit = async (event: any) => {
+    const handleSubmit = async (event:any) => {
         event.preventDefault();
         try {
             const data = await createUser(name, email, phone)

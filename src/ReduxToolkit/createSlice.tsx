@@ -1,22 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface Item {
-    id: number;
-    // other properties of an item, such as name, price, etc.
-    quantity: number;
-}
-
-export interface CartState {
-    items: Item[];
+import {CartState, Item} from '../types/hometype'
 
 
-}
 
 const initialState: CartState = {
     items: [],
-
-
-    // use the imported JSON data as the initial state
+   
 };
 
 

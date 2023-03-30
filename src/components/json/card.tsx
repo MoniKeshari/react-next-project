@@ -1,14 +1,14 @@
 
 
-// import {cardArray} from '../../../src/types/hometype'
-const location: any = [
+import { cardArray } from '../../../src/types/hometype'
+const location: cardArray = [
     {
         id: 1,
         img: "./homeimg/wc4.jpg",
         name: 'women one piece dress',
         desc: 'It is smooth and comfortable dress',
-        price:800,
-        quantity: '',
+        price: 800,
+
 
     },
     {
@@ -16,8 +16,8 @@ const location: any = [
         img: './homeimg/wc.jpg',
         name: 'women one piece dress',
         desc: 'It is smooth and comfortable dress',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
 
     },
@@ -26,8 +26,8 @@ const location: any = [
         img: './homeimg/w489.jpg',
         name: 'women one piece dress',
         desc: 'It is smooth and comfortable dress',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
 
     },
@@ -36,8 +36,8 @@ const location: any = [
         img: './homeimg/w78.jpg',
         name: 'women one piece dress',
         desc: 'It is smooth and comfortable dress',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
     },
     {
@@ -45,8 +45,8 @@ const location: any = [
         img: './homeimg/we.jpg',
         name: 'Earning Jhumka',
         desc: 'It is nice product',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
 
     },
@@ -55,8 +55,8 @@ const location: any = [
         img: './homeimg/w2.jpg',
         name: 'Summer T-Shirt',
         desc: 'It is smooth and comfortable dress',
-        price:800,
-        quantity: '',
+        price: 800,
+
 
     },
     {
@@ -64,8 +64,8 @@ const location: any = [
         img: './homeimg/b0.jpg',
         name: 'Girl Red Frok',
         desc: 'It is smooth and comfortable dress',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
 
     },
@@ -74,8 +74,8 @@ const location: any = [
         img: './homeimg/w489.jpg',
         name: 'women one piece dress',
         desc: 'It is smooth and comfortable dress',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
 
     },
@@ -84,8 +84,8 @@ const location: any = [
         img: './homeimg/w1.jpg',
         name: 'White Watch',
         desc: 'It is beautiful Watch',
-        quantity: '',
-        price:800,
+
+        price: 800,
 
 
     },
@@ -94,8 +94,8 @@ const location: any = [
         img: './homeimg/b8.jpg',
         name: 'Baby Frok',
         desc: 'It is beautiful Frok',
-        price:800,
-        quantity: '',
+        price: 800,
+
 
     },
     {
@@ -103,8 +103,7 @@ const location: any = [
         img: './homeimg/w4.jpg',
         name: 'Women Braslet',
         desc: 'It is beautiful Braslet',
-        price:800,
-        quantity: '',
+        price: 800,
 
     },
     {
@@ -112,11 +111,11 @@ const location: any = [
         img: './homeimg/watches1.jpg',
         name: 'Women Watch',
         desc: 'It is nice Watch',
-        price:800,
-        quantity: '',
+        price: 800,
+
 
     },
-   
+
 
 ]
 export default location

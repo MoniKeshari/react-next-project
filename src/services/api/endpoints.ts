@@ -10,7 +10,7 @@ export const getUserById = async (id: number) => {
   return response.data;
 };
 
-export const createUser = async (name: any, email: any, phone: any) => {
+export const createUser = async (name: string, email: string, phone:any) => {
   const response = await client.post('/users', { name: name, email: email, phone: phone });
 
 

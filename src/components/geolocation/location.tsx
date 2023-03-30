@@ -19,8 +19,8 @@ const LocationFinder = () => {
 
     return (
         <div className={styles.wrapper}>
-            <input type="number" value={lat} onChange={(event: any) => setlat(parseFloat(event.target.value))} step={0.01} />
-            <input type="number" value={lan} onChange={(event: any) => setlan(parseFloat(event.target.value))} step={0.01}/>
+            <input type="number" value={lat} onChange={(event) => setlat(parseFloat(event.target.value))} step={0.01} />
+            <input type="number" value={lan} onChange={(event) => setlan(parseFloat(event.target.value))} step={0.01}/>
         </div>
     )
 }

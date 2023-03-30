@@ -1,7 +1,6 @@
 import { Button } from 'react-bootstrap';
 import styles from '../components/locationcard/cardSummary.module.scss'
-import { useAppSelector } from '@/ReduxToolkit/hooks';
-import EmptyCart from './emptycart';
+
 const CartDetail = ({ item }: any) => {
 
     return (
