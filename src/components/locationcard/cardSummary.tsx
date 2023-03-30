@@ -2,9 +2,9 @@ import { cardType } from '@/types/hometype';
 import React from 'react';
 import styles from '../locationcard/cardSummary.module.scss';
 import { Button } from 'react-bootstrap';
-import { useAppDispatch, useAppSelector } from '@/ReduxToolkit/hooks';
-import { addToCart, incrementQuantity } from '@/ReduxToolkit/createSlice';
-import CartDetail from '../../pages/cartdetails';
+import { useAppDispatch} from '@/ReduxToolkit/hooks';
+import { addToCart } from '@/ReduxToolkit/createSlice';
+
 
 const CardSummary = ({ item }: any) => {
     const dispatch = useAppDispatch();

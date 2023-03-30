@@ -5,14 +5,27 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useState } from 'react';
 import CartDetail from '../pages/cartdetails';
 import Link from 'next/link';
+import EmptyCart from '@/pages/emptycart';
 const Header = () => {
     const [show, setShow] = useState(false);
-   
+    const [empty, setEmpty] = useState(false);
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
-   
-    
-    const handleClick = () => {
-        setShow(true);
+    const handleClick = (path: any) => {
+        if (path === "/emptycart") {
+            setEmpty(true);
+        }
+        else {
+            setEmpty(false);
+
+        }
+        if (path === "/cartdetails") {
+            setShow(true);
+        }
+        else {
+            setShow(false);
+
+        }
+
     }
     return (
         <>
@@ -34,24 +47,30 @@ const Header = () => {
                             <a href="/contact">  Contact</a>
                         </li>
                         <li className="nav-item">
-
-                            <Link onClick={() => handleClick} href="/cartdetails">
+                            {itemCount === 0 ? (<><Link onClick={() => handleClick('path')} href="/emptycart">
                                 <div className={styles.cart}>
-
                                     <div className={styles.counter}>
-
-                                        {itemCount > 0 && <span>{itemCount}</span>}  </div>
+                                        <span>{itemCount || 0} </span></div>
                                     <FaShoppingCart className={styles.icon} />
                                 </div>
                             </Link>
-
-
+                            </>) : <Link onClick={() => handleClick('path')} href="cartdetails">
+                                <div className={styles.cart}>
+                                    <div className={styles.counter}>
+                                        <span>{itemCount || 0} </span></div>
+                                    <FaShoppingCart className={styles.icon} />
+                                </div>
+                            </Link>
+                            }
                         </li>
                     </ul>
 
                 </div>
             </nav>
             {show && (<><CartDetail /></>)}
+
+            {empty && (<> <EmptyCart /></>)}
+
         </>
     )
 }
