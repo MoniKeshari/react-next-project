@@ -1,14 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import {CartState, Item} from '../types/hometype'
-
-
-
 const initialState: CartState = {
     items: [],
    
 };
-
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -30,7 +26,7 @@ const cartSlice = createSlice({
 
             } else {
                 state.items.push({ ...action.payload, quantity: 1 });
-
+               
             }
         },
         incrementQuantity: (state, action) => {

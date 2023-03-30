@@ -8,6 +8,25 @@
         transition: transform 0.3s ease;
        
     }
+    >div{
+        h5, p{
+            font: 1em sans-serif;
+            span{
+                &.originalPrice{
+                    color:darkgray;
+                    text-decoration:line-through ;
+
+                }
+              
+               
+                &.discountprice{
+                    margin-left: 10px;
+                }
+            }
+           
+            text-align: center;
+        }
+    }
    & .cardFooter{
     display: flex;
     justify-content: right;

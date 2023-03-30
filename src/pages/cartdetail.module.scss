@@ -1,5 +1,13 @@
 .wrapper{
-    
+    .imgpic{
+        padding: 1rem;
+        border-radius: 1rem;
+        img{
+            border-radius: 1rem; 
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+    }
     .containerData{
        
                 ul{
@@ -8,3 +16,6 @@
             }
     
 }
+.wrapper:hover img {
+    transform: scale(1.05);
+  }

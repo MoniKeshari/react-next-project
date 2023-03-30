@@ -6,8 +6,8 @@ const location: cardArray = [
         id: 1,
         img: "./homeimg/wc4.jpg",
         name: 'women one piece dress',
-        desc: 'It is smooth and comfortable dress',
-        price: 800,
+        desc: 'Free Delivery',
+        price: 1200,
 
 
     },
@@ -15,9 +15,10 @@ const location: cardArray = [
         id: 2,
         img: './homeimg/wc.jpg',
         name: 'women one piece dress',
-        desc: 'It is smooth and comfortable dress',
+        desc: 'Free Delivery',
 
-        price: 800,
+
+        price: 1000,
 
 
     },
@@ -25,9 +26,8 @@ const location: cardArray = [
         id: 3,
         img: './homeimg/w489.jpg',
         name: 'women one piece dress',
-        desc: 'It is smooth and comfortable dress',
-
-        price: 800,
+        desc: 'Free Delivery',
+        price: 1400,
 
 
     },
@@ -35,18 +35,20 @@ const location: cardArray = [
         id: 4,
         img: './homeimg/w78.jpg',
         name: 'women one piece dress',
-        desc: 'It is smooth and comfortable dress',
+        desc: 'Free Delivery',
+       
 
-        price: 800,
+        price: 900,
 
     },
     {
         id: 5,
         img: './homeimg/we.jpg',
         name: 'Earning Jhumka',
-        desc: 'It is nice product',
+        desc: 'Free Delivery',
+       
 
-        price: 800,
+        price: 2375,
 
 
     },
@@ -54,8 +56,9 @@ const location: cardArray = [
         id: 6,
         img: './homeimg/w2.jpg',
         name: 'Summer T-Shirt',
-        desc: 'It is smooth and comfortable dress',
-        price: 800,
+        desc: 'Free Delivery',
+       
+        price: 200,
 
 
     },
@@ -63,9 +66,11 @@ const location: cardArray = [
         id: 7,
         img: './homeimg/b0.jpg',
         name: 'Girl Red Frok',
-        desc: 'It is smooth and comfortable dress',
+        desc: 'Free Delivery',
 
-        price: 800,
+       
+
+        price: 690,
 
 
     },
@@ -73,9 +78,10 @@ const location: cardArray = [
         id: 8,
         img: './homeimg/w489.jpg',
         name: 'women one piece dress',
-        desc: 'It is smooth and comfortable dress',
+        desc: 'Free Delivery',
 
-        price: 800,
+
+        price: 6789,
 
 
     },
@@ -83,9 +89,10 @@ const location: cardArray = [
         id: 9,
         img: './homeimg/w1.jpg',
         name: 'White Watch',
-        desc: 'It is beautiful Watch',
+        desc: 'Free Delivery',
 
-        price: 800,
+
+        price: 200,
 
 
     },
@@ -93,8 +100,9 @@ const location: cardArray = [
         id: 10,
         img: './homeimg/b8.jpg',
         name: 'Baby Frok',
-        desc: 'It is beautiful Frok',
-        price: 800,
+        desc: 'Free Delivery',
+
+        price: 789,
 
 
     },
@@ -102,16 +110,18 @@ const location: cardArray = [
         id: 11,
         img: './homeimg/w4.jpg',
         name: 'Women Braslet',
-        desc: 'It is beautiful Braslet',
-        price: 800,
+        desc: 'Free Delivery',
+
+        price: 690,
 
     },
     {
         id: 12,
         img: './homeimg/watches1.jpg',
         name: 'Women Watch',
-        desc: 'It is nice Watch',
-        price: 800,
+        desc: 'Free Delivery',
+
+        price: 1900,
 
 
     },
