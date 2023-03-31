@@ -9,6 +9,10 @@ const CartDetail = ({ item }: { item: any }) => {
     return (
         <>
             {item?.map((id: any) => {
+                const originalPrice = id.price;
+                const discountPercentage = 10; // assuming 10% discount
+
+                const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
                 return (
                     <>
                         <div className={`${styles.wrapper} row justify-content-center`}>
@@ -33,24 +37,25 @@ const CartDetail = ({ item }: { item: any }) => {
                                             </li>
                                             <li>
                                                 <p className="card-text">
-                                                    {id.price}
+                                                    <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
+                                                    <span className={styles.discountprice}>&#8377;{discountedPrice.toLocaleString()} </span>
                                                 </p>
                                             </li>
                                             <li>
-                                                <p>{id.desc}</p>
+                                                <p className={styles.desc}>{id.desc}</p>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className='col-md-2 '> <button onClick={() => dispatch(decrementQuantity(id.id))
-                                    }>decrement</button></div>
-                                    <div className='col-md-2 '>
+                                    <div className='col-md-2 '> <button className={styles.dec} onClick={() => dispatch(decrementQuantity(id.id))
+                                    }><span>Decrement</span></button></div>
+                                    <div className={`${styles.quantity} col-md-2`}>
 
-                                        <p>count {id.quantity}</p>
+                                        <span>{id.quantity}</span>
 
                                     </div>
-                                    <div className='col-md-2 '> <button onClick={() => dispatch(incrementQuantity(id.id))}>increment</button></div>
+                                    <div className='col-md-2 '> <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>Increment</span></button></div>
 
-                                    <div className='col-md-2 '> <button onClick={() => dispatch(removeItem(id.id))
+                                    <div className='col-md-2 '> <button className={styles.rem} onClick={() => dispatch(removeItem(id.id))
 
                                     }>Remove</button></div>
 

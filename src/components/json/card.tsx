@@ -13,7 +13,7 @@ const location: cardArray = [
     },
     {
         id: 2,
-        img: './homeimg/wc.jpg',
+        img: './homeimg/w9.jpg',
         name: 'women one piece dress',
         desc: 'Free Delivery',
 
