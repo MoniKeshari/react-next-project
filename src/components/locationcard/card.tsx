@@ -5,7 +5,6 @@ import { CardItem } from '@/types/hometype';
 
 
 const CardData = () => {
-
     const [product, setProduct] = useState<CardItem[]>([]);
     useEffect(() => {
         setProduct(location);
