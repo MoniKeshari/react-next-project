@@ -5,11 +5,11 @@ import LocationArea from "@/components/geolocation/geolocation";
 const Home = () => {
     return (
         <>
-            <LocationArea />
+            {/* <LocationArea /> */}
             {/* <Search /> */}
-            <div >
+          
                 <CardData />
-            </div>
+           
         </>
 
     );
