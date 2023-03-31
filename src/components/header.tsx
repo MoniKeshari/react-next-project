@@ -2,7 +2,7 @@
 import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartDetail from '../pages/cartdetails';
 import EmptyCart from '@/pages/emptycart';
 const Header = () => {
@@ -28,6 +28,12 @@ const Header = () => {
 
 
     }
+    useEffect(()=>{
+        if(itemCount !== 0){
+            setEmpty(false);
+        }
+
+    },[itemCount])
    
     return (
         <>
@@ -63,7 +69,7 @@ const Header = () => {
 
             {show  && (<><CartDetail item={item} /></>) }
 
-            { empty && (<> <EmptyCart /></>)}
+            { empty &&  (<> <EmptyCart /></>)}
 
         </>
     )

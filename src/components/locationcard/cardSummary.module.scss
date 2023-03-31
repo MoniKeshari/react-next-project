@@ -1,58 +1,67 @@
 @import '../varialbes/variable.scss';
 
-.cardData{
+.cardData {
     cursor: pointer;
+
     img {
         height: 100%;
         width: 100%;
         transition: transform 0.3s ease;
-       
+
     }
-    >div{
-        h5, p{
+
+    >div {
+
+        h5,
+        p {
             font: 1em sans-serif;
-            span{
-                &.originalPrice{
-                    color:darkgray;
-                    text-decoration:line-through ;
+
+            span {
+                &.originalPrice {
+                    color: darkgray;
+                    text-decoration: line-through;
 
                 }
-              
-               
-                &.discountprice{
+
+
+                &.discountprice {
                     margin-left: 10px;
                 }
             }
-           
+
             text-align: center;
         }
     }
-   & .cardFooter{
-    display: flex;
-    justify-content: right;
-    small{
-        Button{
-            &.dec{
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-              }
+
+    & .cardFooter {
+        display: flex;
+        justify-content: right;
+
+        small {
+            Button {
+                &.dec {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+            }
+
+            Button {
+                &.inc {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+
+                }
+
+            }
 
         }
-       Button{
-        &.inc{
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
- 
-         }
 
-       }
-       
-    }
-       
     }
 
 
 }
+
 .cardData:hover img {
     transform: scale(1.05);
-  }
+}

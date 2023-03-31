@@ -1,9 +1,11 @@
 
-import { useEffect, useState } from 'react';
+import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import styles from '../pages/cartdetail.module.scss';
 import Image from 'next/image';
+import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit/createSlice';
 
 const CartDetail = ({ item }: { item: any }) => {
+    const dispatch = useAppDispatch();
     return (
         <>
             {item?.map((id: any) => {
@@ -39,15 +41,18 @@ const CartDetail = ({ item }: { item: any }) => {
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className='col-md-2 '> <button>decrement</button></div>
+                                    <div className='col-md-2 '> <button onClick={() => dispatch(decrementQuantity(id.id))
+                                    }>decrement</button></div>
                                     <div className='col-md-2 '>
 
                                         <p>count {id.quantity}</p>
 
                                     </div>
-                                    <div className='col-md-2 '> <button>increment</button></div>
+                                    <div className='col-md-2 '> <button onClick={() => dispatch(incrementQuantity(id.id))}>increment</button></div>
 
-                                    <div className='col-md-2 '> <button>Remove</button></div>
+                                    <div className='col-md-2 '> <button onClick={() => dispatch(removeItem(id.id))
+
+                                    }>Remove</button></div>
 
                                 </div>
 
