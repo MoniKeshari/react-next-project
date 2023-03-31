@@ -5,6 +5,20 @@ export interface CardItem {
     desc: string,
     price: number,
 }
+export interface CardItemData {
+    id: number,
+    img: string,
+    name: string,
+    desc: string,
+    price: number,
+    quantity: number;
+    item:any;
+    
+}
+export type detailsArray=  CardItemData[]
+   
+    
+
 export type CardSummaryProps = {
     item: CardItem;
     
@@ -38,3 +52,11 @@ export interface User {
     email: string;
 }
 
+export interface footerItem{
+    id:number;
+    name:string;
+    img:any;
+    section:string;
+
+}
+export type footerArray=footerItem[]

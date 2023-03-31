@@ -3,8 +3,7 @@
     flex-direction: column;
     justify-content: center; // centers vertically
     align-items: center; // centers horizontally
-    // height: 100vh; // sets the height to the full viewport height
-    // add any other styles you need for the wrapper here
+   
     margin-bottom: 5rem;
     & > div {
         h3{
@@ -27,8 +26,8 @@
          
 
         }
-      margin-bottom: 20px; // adds some spacing between the divs
-      // add any other styles you need for the divs here
+      margin-bottom: 20px; 
+     
       
       
     }

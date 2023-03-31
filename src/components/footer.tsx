@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from '../components/footer.module.scss'
 import footerdata from '../components/json/footer'
+import { footerItem } from '@/types/hometype'
 export default function footer() {
     return (
         <>
-            {footerdata.map((id: any) => {
+            {footerdata.map((id: footerItem) => {
                 return (
                     <>
                         <div className={styles.footer}>

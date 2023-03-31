@@ -10,6 +10,8 @@ const CardData = () => {
         setProduct(location);
 
     }, [product])
+    
+      
     return (
         <>
             <section className='py-4 container'>

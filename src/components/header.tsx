@@ -4,25 +4,31 @@ import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useState } from 'react';
 import CartDetail from '../pages/cartdetails';
-import Link from 'next/link';
 import EmptyCart from '@/pages/emptycart';
-
 const Header = () => {
     const [show, setShow] = useState(false);
     const [empty, setEmpty] = useState(false);
     const item = useAppSelector(state => state.counter.items)
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
     const handleClick = () => {
-
+       
         if (itemCount === 0) {
             setEmpty(true);
+        }
+        else{
+            setEmpty(false);
+
         }
         if (itemCount !== 0) {
             setShow(true);
         }
+        else{
+            
+        }
 
 
     }
+   
     return (
         <>
             <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
@@ -55,9 +61,9 @@ const Header = () => {
                 </div>
             </nav>
 
-            {show && (<><CartDetail item={item} /></>)}
+            {show  && (<><CartDetail item={item} /></>) }
 
-            {empty && (<> <EmptyCart /></>)}
+            { empty && (<> <EmptyCart /></>)}
 
         </>
     )
