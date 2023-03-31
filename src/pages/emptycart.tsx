@@ -2,7 +2,19 @@
 
 import Image from 'next/image';
 import styles from './empty.module.scss';
+import { useEffect, useState } from 'react';
+
 const EmptyCart = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleClick = () => {
+        setScrollPosition(window.pageYOffset + 1500);
+    };
+    useEffect(() => {
+        window.scrollTo({ top: scrollPosition, behavior: "smooth" });
+    });
+
+
     return (
         <>
             <div className={styles.wrapper}>
@@ -19,8 +31,7 @@ const EmptyCart = () => {
                     <h3>Your Cart is Empty!</h3>
                     <p>Must add items on cart before you proceed to checkout.</p>
 
-
-                    <button>RETURN TO SHOP</button>
+                    <button className={styles.buttonR} onClick={handleClick}><span>RETURN TO SHOP</span></button>
                 </div>
 
 
