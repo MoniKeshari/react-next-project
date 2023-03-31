@@ -60,3 +60,9 @@ export interface footerItem{
 
 }
 export type footerArray=footerItem[]
+export interface carouselItemData{
+    id:number;
+ 
+    imageUrl:string;
+}
+export type carouselItem=carouselItemData[];
