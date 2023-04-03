@@ -1,7 +1,6 @@
 
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import styles from '../pages/cartdetail.module.scss';
-import Image from 'next/image';
 import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit/createSlice';
 
 const CartDetail = ({ item }: { item: any }) => {
@@ -9,6 +8,7 @@ const CartDetail = ({ item }: { item: any }) => {
     return (
         <>
             {item?.map((id: any) => {
+                 {console.log(id.image, 'image')}
                 const originalPrice = id.price;
                 const discountPercentage = 10; // assuming 10% discount
 
@@ -17,9 +17,10 @@ const CartDetail = ({ item }: { item: any }) => {
                     <>
                         <div className={`${styles.wrapper} row justify-content-center`}>
                             <div className={`${styles.imgpic} col-md-2`}>
-
-                                <Image
-                                    src={`/${id.img}`}
+                             
+                              
+                                <img
+                                    src={id.image}
                                     alt="Description of the image"
                                     width={200}
                                     height={200}
@@ -33,7 +34,7 @@ const CartDetail = ({ item }: { item: any }) => {
                                     <div className={`${styles.containerData} col-md-4 `}>
                                         <ul>
                                             <li>
-                                                <h6>{id.name}</h6>
+                                                <h6>{id.category}</h6>
                                             </li>
                                             <li>
                                                 <p className="card-text">
@@ -42,7 +43,7 @@ const CartDetail = ({ item }: { item: any }) => {
                                                 </p>
                                             </li>
                                             <li>
-                                                <p className={styles.desc}>{id.desc}</p>
+                                                <p className={styles.desc}>{id.title}</p>
                                             </li>
                                         </ul>
                                     </div>

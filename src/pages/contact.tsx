@@ -30,7 +30,8 @@ const Contact = () => {
     }
 
     return (<>
-        <> <div className="container-fluid text-center">
+       <div className={styles.wrapper}>
+        <div className="container-fluid text-center">
             <div className=" row justify-content-center mt-5 mb-5">
                 <div className={`${styles.formdata} col-md-4  col-sm-8 col-xs-12`}>
                     <form onSubmit={handleSubmit}>
@@ -68,8 +69,10 @@ const Contact = () => {
                     />
                 </div>
             </div>
-        </div></>
-    </>
+        </div>
+        </div>
+        </>
+   
 
     )
 }

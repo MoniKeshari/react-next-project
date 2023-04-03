@@ -13,7 +13,7 @@ const CardSummary: React.FC<CardSummaryProps> = ({ item }: any) => {
 
     }
     const originalPrice = item.price;
-    const discountPercentage = 10; // assuming 10% discount
+    const discountPercentage = 2; // assuming 10% discount
 
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
 
@@ -22,10 +22,10 @@ const CardSummary: React.FC<CardSummaryProps> = ({ item }: any) => {
         <>
             <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
                 <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
-                    <img src={item.img} alt='' />
+                    <img src={item.image} alt='' />
 
                     <div className="card-body">
-                        <h5 className="card-title">{item.name}</h5>
+                        <h5 className="card-title">{item.category}</h5>
 
                         <p className="card-text">
                             <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
@@ -34,7 +34,7 @@ const CardSummary: React.FC<CardSummaryProps> = ({ item }: any) => {
 
                         <p>{discountPercentage}% off</p>
 
-                        <p className="card-text">{item.desc}</p>
+                        <p className="card-text">{item.title}</p>
                     </div>
                     <div className={`${styles.cardFooter} card-footer`}>
                         <small className="text-muted">

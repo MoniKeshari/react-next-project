@@ -1,33 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import CardSummary from './cardSummary';
-import location from '../json/card'
 import { CardItem } from '@/types/hometype';
-
+import CardShimmer from './cardSummuryShimmer';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import axios from 'axios';
 
 const CardData = () => {
+    const [isLoading, setLoading] = useState(true);
     const [product, setProduct] = useState<CardItem[]>([]);
-    useEffect(() => {
-        setProduct(location);
 
-    }, [product])
-    
-      
+    useEffect(() => {
+        setTimeout(() => {
+            axios.get('https://fakestoreapi.com/products').then((res: any) => {
+                const response = res.data;
+                setProduct(response);
+                setLoading(false);
+
+
+            })
+        }, 2000)
+
+    }, [])
+
+
     return (
         <>
-            <section className='py-4 container'>
-                <div className='row justify-content-center'>
-                    {product.map((item:CardItem) => {
+            <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <section className='py-4 container'>
+                    <div className='row justify-content-center'>
 
-                        return (
-                            <>
-                                <CardSummary item={item} />
-                            </>
-                        )
-                    })}
+                        {product.map((item: CardItem) => {
+                            return (
+                                <>
 
-                </div>
-            </section>
+                                    {isLoading ? (<CardShimmer />) : (<CardSummary item={item} />) }
 
+                                </>
+
+
+
+                            )
+                        })}
+
+
+                    </div>
+                </section>
+            </SkeletonTheme>
         </>
     )
 }

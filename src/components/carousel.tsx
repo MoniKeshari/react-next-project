@@ -26,13 +26,13 @@ const  MyCarousel=()=> {
 
   return (
     <div className={styles.carouselContainer}>
-      <Carousel responsive={responsive}>
+      {/* <Carousel responsive={responsive}>
         {images.map((image, index) => (
           <div key={index}>
             <img src={image} alt={`Slide ${index}`} />
           </div>
         ))}
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 }
