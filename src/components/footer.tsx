@@ -5,13 +5,13 @@ import { footerItem } from '@/types/hometype'
 export default function footer() {
     return (
         <>
-            {footerdata.map((id: footerItem) => {
+            {footerdata.map((id: footerItem, index:number) => {
                 return (
                     <>
-                        <div className={styles.footer}>
+                        <div className={styles.footer} key={index}>
                             <div className="first-col">
                                 <ul>
-                                    <li>
+                                    <li >
                                         {id.img}
 
                                     </li>

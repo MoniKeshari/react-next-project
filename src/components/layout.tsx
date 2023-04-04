@@ -3,7 +3,6 @@
 import { ReactNode } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
-
 type LayoutProps = {
   children: ReactNode;
   className?: string;
@@ -11,6 +10,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   const getLayout = (page: ReactNode) => (
+
     <>
       <Header />
       {page}

@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
 
-const CardSummary: React.FC<CardSummaryProps> = ({ item }: any) => {
+const CardSummary: React.FC<CardSummaryProps> = ({item}: any) => {
     const dispatch = useAppDispatch();
     const handleClick = () => {
 

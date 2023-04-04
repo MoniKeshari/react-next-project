@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <>
         <div className={styles.wrapper}>
- {/* <LocationArea /> */}
+        {/* <LocationArea /> */}
             {/* <Search /> */}
            {/* < MyCarousel /> */}
            <CardData />
