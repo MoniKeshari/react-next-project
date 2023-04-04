@@ -28,11 +28,7 @@ const Home = () => {
                         {product.map((item: CardItem, index) => {
                             return (
                                 <>
-
-
                                     <CardData item={item} key={item.id} />
-
-
 
                                 </>
                             )

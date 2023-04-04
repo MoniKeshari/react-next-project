@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 import Image from 'next/image';
 import { Button } from 'react-bootstrap';
 import styles from  './about.module.scss';

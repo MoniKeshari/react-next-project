@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import CardSummary from './cardSummary';
-import { CardItem, CardSummaryProps } from '@/types/hometype';
-import axios from 'axios';
+import React from 'react';
+import {  CardSummaryProps } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
 import styles from './cardSummary.module.scss'
 import { Button } from 'react-bootstrap';
 const CardData: React.FC<CardSummaryProps> = ({ item }: {item:any}) => {
-
     const dispatch = useAppDispatch();
     const handleClick = () => {
-
         dispatch(addToCart(item))
 
     }
     const originalPrice = item.price;
     const discountPercentage = 2; // assuming 10% discount
-
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
-
-
     return (
         <>
             <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
@@ -47,10 +40,6 @@ const CardData: React.FC<CardSummaryProps> = ({ item }: {item:any}) => {
                     </div>
                 </div>
             </div>
-
-
-
-
         </>
     )
 }
