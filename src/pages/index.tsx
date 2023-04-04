@@ -6,14 +6,13 @@ import styles from './index.module.scss';
 import { useEffect, useState } from "react";
 import { CardItem } from "@/types/hometype";
 import axios from "axios";
-import ShimmerEffect from "./shimmer";
 const Home = () => {
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setLoading] = useState(false);
     const [product, setProduct] = useState<CardItem[]>([]);
 
 
     useEffect(() => {
-        
+
         const getdata = async () => {
             try {
                 setLoading(true);
@@ -26,9 +25,10 @@ const Home = () => {
                 setLoading(false);
             }
         };
+        setLoading(true);
         setTimeout(() => {
             getdata();
-        }, 2000);
+        }, 0);
 
     }, [])
     return (
@@ -39,16 +39,10 @@ const Home = () => {
                 {/* < MyCarousel /> */}
                 <section className='py-4 container'>
                     <div className='row justify-content-center'>
-                   
-                        {product.map((item: CardItem, index) => {
+                        {product.map((item: CardItem) => {
                             return (
                                 <>
-                                  {isLoading && (<ShimmerEffect />)}
-                                  
-
-                                    <CardData item={item} key={item.id} isLoading={isLoading} />
-
-
+                                    <CardData item={item} key={item.id} />
                                 </>
                             )
                         }

@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardSummaryProps } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
 import styles from './cardSummary.module.scss'
 import { Button } from 'react-bootstrap';
-const CardData: React.FC<CardSummaryProps> = ({ item, isLoading }: { item: any, isLoading: boolean }) => {
-    console.log(isLoading, 'isLoading');
+import ShimmerEffect from '@/pages/shimmer';
+const CardData: React.FC<CardSummaryProps> = ({ item }: { item: any}) => {
 
     const dispatch = useAppDispatch();
     const handleClick = () => {
         dispatch(addToCart(item))
 
     }
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }, []);
     const originalPrice = item.price;
     const discountPercentage = 2; // assuming 10% discount
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
     return (
         <>
-            <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
+            {isLoading ? (<ShimmerEffect />) : (<>     <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
                 <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
                     <img src={item.image} alt='' />
                     <div className='card-body'>
@@ -40,7 +48,9 @@ const CardData: React.FC<CardSummaryProps> = ({ item, isLoading }: { item: any, 
                         </small>
                     </div>
                 </div>
-            </div>
+
+            </div></>)}
+
         </>
     )
 }
