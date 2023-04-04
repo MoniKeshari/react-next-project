@@ -22,6 +22,7 @@ export type detailsArray = CardItemData[]
 export type CardSummaryProps = {
     item: CardItem;
     key: any;
+    isLoading:boolean;
   
 
 

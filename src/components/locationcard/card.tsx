@@ -1,10 +1,12 @@
 import React from 'react';
-import {  CardSummaryProps } from '@/types/hometype';
+import { CardSummaryProps } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
 import styles from './cardSummary.module.scss'
 import { Button } from 'react-bootstrap';
-const CardData: React.FC<CardSummaryProps> = ({ item }: {item:any}) => {
+const CardData: React.FC<CardSummaryProps> = ({ item, isLoading }: { item: any, isLoading: boolean }) => {
+    console.log(isLoading, 'isLoading');
+
     const dispatch = useAppDispatch();
     const handleClick = () => {
         dispatch(addToCart(item))
@@ -18,8 +20,7 @@ const CardData: React.FC<CardSummaryProps> = ({ item }: {item:any}) => {
             <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
                 <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
                     <img src={item.image} alt='' />
-
-                    <div className="card-body">
+                    <div className='card-body'>
                         <h5 className="card-title">{item.category}</h5>
 
                         <p className="card-text">
