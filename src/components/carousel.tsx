@@ -1,40 +1,40 @@
-
-import 'react-multi-carousel/lib/styles.css';
+import React, { useState } from 'react';
 import styles from './carousel.module.scss';
+import Carousel from 'react-bootstrap/Carousel';
+import carousel from '../components/json/carousel';
+const ControlledCarousel = () => {
+  const [index, setIndex] = useState(0);
 
-import { Carousel, CarouselItem } from 'react-bootstrap';
-
-const  MyCarousel=()=> {
-  const images = ['/homeimg/w9.jpg', '/homeimg/w21.jpg', '/homeimg/w34.jpg', '/homeimg/w78.jpg'];
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 4, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
+  const handleSelect = (selectedIndex: any, e: any) => {
+    setIndex(selectedIndex);
   };
 
   return (
-    <div className={styles.carouselContainer}>
-      {/* <Carousel responsive={responsive}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Slide ${index}`} />
-          </div>
-        ))}
-      </Carousel> */}
+    <>
+    <div className={styles.container}>
+    {carousel.map((id) => {
+        return (
+          <><Carousel className={styles.Carouseldata} activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item className={styles.carouselItem}>
+              <img
+                className="d-block w-100"
+                src={`/${id.imageUrl}`}
+                alt="First slide"
+              />
+              <Carousel.Caption>
+                <h3>{id.id}</h3>
+                <p>{id.title}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+
+          </Carousel></>
+        )
+      })}
     </div>
+    
+
+    </>
+
   );
 }
-
-export default MyCarousel;
+export default ControlledCarousel;

@@ -66,5 +66,6 @@ export interface carouselItemData {
     id: number;
 
     imageUrl: string;
+    title:string;
 }
 export type carouselItem = carouselItemData[];
