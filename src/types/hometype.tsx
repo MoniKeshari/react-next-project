@@ -12,19 +12,20 @@ export interface CardItemData {
     desc: string,
     price: number,
     quantity: number;
-    item:any;
-    
+    item: any;
+
 }
-export type detailsArray=  CardItemData[]
-   
-    
+export type detailsArray = CardItemData[]
+
+
 
 export type CardSummaryProps = {
     item: CardItem;
-    key:any;
-    
+    key: any;
+  
 
-  };
+
+};
 
 export interface Item {
     id: number;
@@ -53,17 +54,18 @@ export interface User {
     email: string;
 }
 
-export interface footerItem{
-    id:number;
-    name:string;
-    img:any;
-    section:string;
+export interface footerItem {
+    id: number;
+    name: string;
+    img: any;
+    section: string;
 
 }
-export type footerArray=footerItem[]
-export interface carouselItemData{
-    id:number;
- 
-    imageUrl:string;
+export type footerdata = footerItem[]
+export type footerArray = footerItem[]
+export interface carouselItemData {
+    id: number;
+
+    imageUrl: string;
 }
-export type carouselItem=carouselItemData[];
+export type carouselItem = carouselItemData[];
