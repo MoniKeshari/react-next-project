@@ -1,57 +1,52 @@
-import React, { useEffect, useRef, useState } from 'react';
-import styles from './carousel.module.scss';
-// import Carousel from 'react-bootstrap/Carousel';
-import carousel from '../components/json/carousel';
-
-// import Carousel from 'react-multi-carousel';
-// import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
-import { Carousel } from "react-responsive-carousel"; // Import carousel component
-const ControlledCarousel = () => {
+import { useState, useEffect } from 'react';
+import carouseldata from '../components/json/carousel';
+import styles from './carousel.module.scss'
+const MyCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const interval = 2000;
-  const handleChange = (index: number) => {
-    setCurrentIndex(index);
-  };
+
+
+  const interval = 3000;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      // increment current index and loop back to 0 when end of carousel is reached
-      setCurrentIndex(currentIndex => (currentIndex + 1));
+
+      setCurrentIndex(currentIndex => (currentIndex + 1) % carouseldata.length);
     }, interval);
 
-    // clear interval on component unmount
-    if (currentIndex) {
-      setTimeout(() => setCurrentIndex(0), interval);
-    }
 
-    // clear interval on component unmount
     return () => clearInterval(intervalId);
-  }, []); 
+  }, []); // run useEffect only once on component mount
+
+
+  const nextSlider = () => {
+    setCurrentIndex(currentIndex + 1);
+  }
+  const prevSlider = () => {
+    setCurrentIndex(currentIndex - 1);
+  }
+
   return (
-    <>
-      <div className={styles.container}>
-      <Carousel 
-        selectedItem={currentIndex} 
-        onChange={handleChange}
-      >
-        <div>
-          <img src='./homeimg/other2.jpg' alt="Slide 1" />
-        </div>
-        <div>
-          <img src='./homeimg/other.jpg' alt="Slide 2" />
-        </div>
-        <div>
-          <img src="./homeimg/bag.jpg" alt="Slide 3" />
-        </div>
-      </Carousel>
-
-      {/* <button onClick={handlePrevClick}>Previous</button>
-      <button onClick={handleNextClick}>Next</button> */}
+    <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        {carouseldata.map((item, index) => (
+          <div key={index} className={`carousel-item ${styles.containerdata} ${index === currentIndex ? 'active' : ''}`}>
+            <img src={item.imageUrl} alt={item.title} />
+            <div className="carousel-caption">
+              <h5>{item.title}</h5>
+              {/* <p>{item.description}</p> */}
+            </div>
+          </div>
+        ))}
+      </div>
+      <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev" onClick={prevSlider}>
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next" onClick={nextSlider}>
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
-
-    </>
-
   );
 }
-export default ControlledCarousel;
+export default MyCarousel;
