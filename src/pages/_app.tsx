@@ -7,27 +7,25 @@ import '../pages/global.module.scss';
 import { store } from '@/ReduxToolkit/store';
 import Router from 'next/router';
 import { useState } from 'react';
-import ShimmerEffect from './shimmer';
+import PagesShimmer from './pagesShimmer';
 function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setloading] = useState(false);
   Router.events.on('routeChangeStart', (url) => {
-    console.log( 'router is changes');
-    
+    console.log('router is changes');
+
     setloading(true);
 
   })
   Router.events.on('routeChangeComplete', (url) => {
-    console.log( 'router is finished');
+    console.log('router is finished');
     setloading(false);
   })
   return (
     <>
-
-
       <Provider store={store}>
         <Layout className="my-layout">
 
-          {isLoading && (<ShimmerEffect />)}
+          {isLoading && (<PagesShimmer />)}
           <Component {...pageProps} />
 
 

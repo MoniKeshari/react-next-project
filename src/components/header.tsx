@@ -5,6 +5,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import CartDetail from '../pages/cartdetails';
 import EmptyCart from '@/pages/emptycart';
+import Link from 'next/link';
 const Header = () => {
     const [show, setShow] = useState(false);
     const [empty, setEmpty] = useState(false);
@@ -36,34 +37,36 @@ const Header = () => {
     }, [itemCount])
 
     return (
+
         <>
             <header className={styles.header}>
                 <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
-                    <a className="navbar-brand" href="#">Shopping View</a>
+                    <h3>Shopping View</h3>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
                         <ul className="navbar-nav">
-                            <li className="nav-item active">
-                                <a href="/">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="/about">  About</a>
+                            <li> <Link className="nav-item active" href="/">
+                                Home
+                            </Link></li>
+                            <li><Link className="nav-item" href="/about">
+                                About
 
-                            </li>
-                            <li className="nav-item">
-                                <a href="/contact">  Contact</a>
-                            </li>
-                            <li className="nav-item">
+                            </Link></li>
+                            <li> <Link className="nav-item" href="/contact">
+                                Contact
+                            </Link></li>
+                            <li><Link className="nav-item" href=''>
 
                                 <div className={styles.cart}>
                                     <div className={styles.counter}>
                                         <span>{itemCount || 0} </span></div>
                                     <FaShoppingCart className={styles.icon} onClick={handleClick} />
                                 </div>
-                            </li>
+                            </Link></li>
+
                         </ul>
 
                     </div>
