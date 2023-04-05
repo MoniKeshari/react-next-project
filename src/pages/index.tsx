@@ -2,7 +2,6 @@
 import CardData from "@/components/locationcard/card";
 // import LocationArea from "@/components/geolocation/geolocation";
 
-import styles from './index.module.scss';
 import { useEffect, useState } from "react";
 import { CardItem } from "@/types/hometype";
 import axios from "axios";

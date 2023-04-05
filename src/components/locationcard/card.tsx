@@ -5,7 +5,10 @@ import { addToCart } from '@/ReduxToolkit/createSlice';
 import styles from './cardSummary.module.scss'
 import { Button } from 'react-bootstrap';
 import ShimmerEffect from '@/pages/shimmer';
+import Image from 'next/image';
 const CardData: React.FC<CardSummaryProps> = ({ item }: { item: any}) => {
+    console.log(item, 'sgfchgsfcgs');
+    
 
     const dispatch = useAppDispatch();
     const handleClick = () => {
@@ -27,7 +30,7 @@ const CardData: React.FC<CardSummaryProps> = ({ item }: { item: any}) => {
         <>
             {isLoading ? (<ShimmerEffect />) : (<>     <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
                 <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
-                    <img src={item.image} alt='' />
+                    <Image src={`${item.image}`} alt='' height={314} width={249}/>
                     <div className='card-body'>
                         <h5 className="card-title">{item.category}</h5>
 

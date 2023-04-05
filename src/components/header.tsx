@@ -73,7 +73,7 @@ const Header = () => {
                 </nav>
             </header>
 
-            {show && (<div className={styles.cartdetails}><CartDetail item={item} /></div>)}
+            {show && (<div><CartDetail item={item} /></div>)}
 
             {empty && (<> <EmptyCart /></>)}
 

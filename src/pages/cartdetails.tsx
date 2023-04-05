@@ -2,6 +2,7 @@
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import styles from '../pages/cartdetail.module.scss';
 import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit/createSlice';
+import Image from 'next/image';
 
 const CartDetail = ({ item }: { item: any }) => {
     const dispatch = useAppDispatch();
@@ -18,7 +19,7 @@ const CartDetail = ({ item }: { item: any }) => {
                             <div className={`${styles.imgpic} col-md-2`}>
                              
                               
-                                <img
+                                <Image
                                     src={id.image}
                                     alt="Description of the image"
                                     width={200}

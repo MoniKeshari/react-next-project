@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import carouseldata from '../components/json/carousel';
 import styles from './carousel.module.scss'
+import Image from 'next/image';
 const MyCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,16 +25,16 @@ const MyCarousel = () => {
   const prevSlider = () => {
     setCurrentIndex(currentIndex - 1);
   }
-
+ 
   return (
     <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         {carouseldata.map((item, index) => (
           <div key={index} className={`carousel-item ${styles.containerdata} ${index === currentIndex ? 'active' : ''}`}>
-            <img src={item.imageUrl} alt={item.title} />
+            <Image src={`/${item.imageUrl}`} alt={item.title} height={500} width={1400}  className={styles.imgdata}
+             />
             <div className="carousel-caption">
               <h5>{item.title}</h5>
-              {/* <p>{item.description}</p> */}
             </div>
           </div>
         ))}
