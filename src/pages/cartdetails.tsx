@@ -8,7 +8,6 @@ const CartDetail = ({ item }: { item: any }) => {
     return (
         <>
             {item?.map((id: any) => {
-                 {console.log(id.image, 'image')}
                 const originalPrice = id.price;
                 const discountPercentage = 10; // assuming 10% discount
 

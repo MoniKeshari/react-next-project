@@ -8,7 +8,7 @@ import { CardItem } from "@/types/hometype";
 import axios from "axios";
 import ControlledCarousel from "@/components/carousel";
 const Home = () => {
-    // const [isLoading, setLoading] = useState(false);
+  
     const [product, setProduct] = useState<CardItem[]>([]);
 
 
@@ -16,17 +16,17 @@ const Home = () => {
 
         const getdata = async () => {
             try {
-                // setLoading(true);
+                
                 const res = await axios.get('https://fakestoreapi.com/products');
                 const response = res.data;
                 setProduct(response);
             } catch (error) {
                 console.log(error);
             } finally {
-                // setLoading(false);
+               
             }
         };
-        // setLoading(true);
+     
         setTimeout(() => {
             getdata();
         }, 0);
@@ -44,8 +44,7 @@ const Home = () => {
                         <div className='row justify-content-center'>
                           
                             {product.map((item: CardItem) => {
-                                  {console.log(product, 'product')
-                                }
+                                
                                 return (
                                     <>
                                         <CardData item={item} key={item.id} />
