@@ -34,7 +34,7 @@ const Home = () => {
     }, [])
     return (
         <>
-            <div className={styles.wrapper}>
+            <div>
                 {/* <LocationArea /> */}
                 {/* <Search /> */}
                 < ControlledCarousel />
