@@ -94,9 +94,9 @@ const Header = () => {
                     <h3>Shopping View</h3>
                  
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
-                 
+                    <li className={styles.mobiledata}>   <MobileResponsiveView /></li>
                         <ul className="navbar-nav">
-                            <li className={styles.mobileviewdata}>   <MobileResponsiveView /></li>
+                          
                      
                             <li> <Link className="nav-item active" href="/">
                                 Home

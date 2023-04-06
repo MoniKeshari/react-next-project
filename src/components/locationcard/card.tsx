@@ -30,7 +30,7 @@ const CardData = ({ item }: { item:any}) => {
         <>
             {isLoading ? (<ShimmerEffect />) : (<>     <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
                 <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
-                    <Image src={`${item.image}`} alt='' height={314} width={249}/>
+                    <Image src={`${item.image}`} alt='' height={500} width={249}/>
                     <div className='card-body'>
                         <h5 className="card-title">{item.category}</h5>
 

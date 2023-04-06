@@ -9,27 +9,13 @@
 }
 
 
-@media (min-width: 767px) {
-  .content {
-    ul {
-      li {
-        &.mobileviewdata {
-          display: none;
-        }
-
-      }
-    }
-
-  }
-
-
-}
 
 
 
 .wrapper {
   h3 {
     color: $white-color;
+    margin-left: 8px;
   }
 
   a {
@@ -53,6 +39,15 @@
   >div {
     ul {
       li {
+        >div{
+       
+            button{
+              color: $white-color;
+            }
+           
+         
+        }
+        
         .cart {
           display: flex;
           align-items: center;
@@ -93,19 +88,89 @@
   }
 
 }
-@media (max-width: 768px) {
+
+@media (min-width: 667px) {
   .content {
-    ul {
-      li {
-       
-        &.mobileviewdata {
-          display: block;
-        }
+    li{
+   
+      &.mobiledata{
+        display: none;
 
       }
+    
     }
+   
 
   }
 
 
 }
+@media (max-width: 992px) {
+  .header{
+    .wrapper {
+      .content {
+        display: flex;
+        justify-content:flex-end;
+        li{
+          display: none;
+          &.mobiledata{
+            display: block;
+    
+          }
+        }
+        
+      }
+      
+        h3 {
+          color: $white-color;
+          margin-left: 8px;
+        }
+      
+        a {
+          color: $white-color;
+      
+          text-decoration: none;
+      
+        }
+      
+      }
+      }
+
+  }
+  
+  
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    .header{
+      .wrapper {
+        .content {
+          display: flex;
+          justify-content:flex-start;
+          li{
+            display: block;
+            &.mobiledata{
+              display: none;
+      
+            }
+          }
+          
+        }
+        
+          h3 {
+            color: $white-color;
+            margin-left: 8px;
+          }
+        
+          a {
+            color: $white-color;
+        
+            text-decoration: none;
+        
+          }
+        
+        }
+        }
+  
+    }
+    
+    // Your CSS rules for this screen size range go here
+  
