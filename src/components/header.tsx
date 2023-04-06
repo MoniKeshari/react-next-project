@@ -75,7 +75,7 @@ const Header = () => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-               <ArrowBackIcon onClick={toggleDrawer(anchor, false)}/>
+                <ArrowBackIcon onClick={toggleDrawer(anchor, false)} />
                 <ListItem disablePadding>
                     {show && (<div className={styles.showdata}><CartDetail item={item} /></div>)}
                 </ListItem>
@@ -91,11 +91,15 @@ const Header = () => {
             <header className={styles.header}>
                 <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
                     <h3>Shopping View</h3>
+                    <div className={styles.content}>
+                        <li className={styles.mobiledata}>
+                            <MobileResponsiveView />
+                        </li>
+                    </div>
+
 
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
-                        <li className={styles.mobiledata}>   <MobileResponsiveView /></li>
                         <ul className="navbar-nav">
-
 
                             <li> <Link className="nav-item active" href="/">
                                 Home

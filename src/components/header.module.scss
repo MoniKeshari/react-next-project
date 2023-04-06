@@ -8,10 +8,6 @@
   z-index: 1;
 }
 
-
-
-
-
 .wrapper {
   h3 {
     color: $white-color;
@@ -39,25 +35,28 @@
   >div {
     ul {
       li {
-        >div{
-       
-            button{
-              color: $white-color;
-            }
-           
-         
+        >div {
+
+          button {
+            color: $white-color;
+          }
+
+
         }
-        
+
         .cart {
           display: flex;
           align-items: center;
           position: relative;
+          button{
+            margin-top: -7px;
+          }
 
         }
 
         .icon {
           font-size: 1.5rem;
-          margin-right: 0.5rem;
+          margin-right: 1rem;
         }
 
         .counter {
@@ -70,8 +69,8 @@
           justify-content: center;
           align-items: center;
           position: absolute;
-          top: -0.5rem;
-          right: -0.5rem;
+          top: -1rem;
+          right: -0.1rem;
           font-size: 0.75rem;
           font-weight: bold;
           margin-top: 7px;
@@ -91,86 +90,81 @@
 
 @media (min-width: 667px) {
   .content {
-    li{
-   
-      &.mobiledata{
+    li {
+
+      &.mobiledata {
         display: none;
 
       }
-    
+
     }
-   
+
 
   }
 
 
 }
-@media (max-width: 992px) {
-  .header{
+
+@media (max-width: 576px) {
+  .header {
     .wrapper {
       .content {
         display: flex;
-        justify-content:flex-end;
-        li{
+        justify-content: space-between;
+
+        li {
           display: none;
-          &.mobiledata{
+
+          &.mobiledata {
             display: block;
-    
+
           }
         }
-        
-      }
-      
-        h3 {
-          color: $white-color;
-          margin-left: 8px;
-        }
-      
-        a {
-          color: $white-color;
-      
-          text-decoration: none;
-      
-        }
-      
-      }
+
       }
 
-  }
-  
-  
-  @media only screen and (min-width: 576px) and (max-width: 992px) {
-    .header{
-      .wrapper {
-        .content {
-          display: flex;
-          justify-content:flex-start;
-          li{
-            display: block;
-            &.mobiledata{
-              display: none;
-      
-            }
-          }
-          
-        }
-        
-          h3 {
-            color: $white-color;
-            margin-left: 8px;
-          }
-        
-          a {
-            color: $white-color;
-        
-            text-decoration: none;
-        
-          }
-        
-        }
-        }
-  
+
+
     }
-    
-    // Your CSS rules for this screen size range go here
-  
+  }
+
+}
+
+
+@media (max-width: 991px) {
+
+  .header {
+    .wrapper {
+      .content {
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          display: none;
+
+          &.mobiledata {
+            display: block;
+
+          }
+        }
+
+      }
+
+
+
+    }
+  }
+
+}
+
+// Your CSS rules for this screen size range go here
+// @media (max-width: 992px) {
+//   .header {
+//     .wrapper {
+//       .content {
+//         display: flex;
+//         justify-content: flex-end;
+//       }
+//     }
+//   }
+// }

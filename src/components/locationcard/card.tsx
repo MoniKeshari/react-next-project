@@ -7,8 +7,7 @@ import { Button } from 'react-bootstrap';
 import ShimmerEffect from '@/pages/shimmer';
 import Image from 'next/image';
 const CardData = ({ item }: { item:any}) => {
-    console.log(item, 'sgfchgsfcgs');
-    
+ 
 
     const dispatch = useAppDispatch();
     const handleClick = () => {
