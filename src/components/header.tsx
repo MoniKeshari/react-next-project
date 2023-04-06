@@ -86,11 +86,8 @@ const Header = () => {
     );
 
     return (
-
         <>
-
             <header className={styles.header}>
-
                 <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
                     <h3>Shopping View</h3>
 
@@ -109,8 +106,6 @@ const Header = () => {
                             <li>
                                 <div className={styles.cart}>
                                     <Link className="nav-item" href=''>
-
-
                                         {(['right'] as const).map((anchor) => (
                                             <React.Fragment key={anchor}>
                                                 <div className={styles.counter}>
@@ -135,18 +130,9 @@ const Header = () => {
                             </li>
 
                         </ul>
-
-                        {/* <DrawerComponent /> */}
-
-
                     </div>
                 </nav>
             </header>
-
-            {/* {show && (<div><CartDetail item={item} /></div>)}
-
-            {empty && (<> <EmptyCart /></>)} */}
-
         </>
     )
 }
