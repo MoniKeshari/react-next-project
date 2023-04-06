@@ -11,6 +11,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+
   const getLayout = (page: ReactNode) => (
 
     <>

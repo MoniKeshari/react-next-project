@@ -5,6 +5,16 @@ export interface CardItem {
     desc: string,
     price: number,
 }
+export interface productItem{
+    id:number;
+    category:string;
+    description:string;
+    image:string;
+    price:number;
+   title:string;
+
+}
+export type product=productItem[]
 export interface CardItemData {
     id: number,
     img: string,
@@ -22,6 +32,7 @@ export type detailsArray = CardItemData[]
 export type CardSummaryProps = {
     item: CardItem;
     key: any;
+    productItem:productItem[]
 
 
 };
@@ -31,6 +42,8 @@ export interface Item {
     // other properties of an item, such as name, price, etc.
     quantity: number;
     items: Item[];
+     
+
 }
 
 export interface CartState {

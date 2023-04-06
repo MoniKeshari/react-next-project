@@ -5,11 +5,12 @@ import styles from './empty.module.scss';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-const EmptyCart = () => {
+const EmptyCart = ({toggleDrawer}:any) => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleClick = () => {
         setScrollPosition(window.pageYOffset + 1500);
+        toggleDrawer();
     };
     useEffect(() => {
         window.scrollTo({ top: scrollPosition, behavior: "smooth" });
@@ -19,7 +20,7 @@ const EmptyCart = () => {
     return (
         <>
             <div className={styles.wrapper}>
-                <div>
+                <div className={styles.imges}>
                     <Image
                         src="/homeimg/empty-cart.svg"
                         alt="Description of the image"
@@ -28,7 +29,7 @@ const EmptyCart = () => {
                     />
                 </div>
 
-                <div >
+                <div className={styles.contentdata}>
                     <h3>Your Cart is Empty!</h3>
                     <p>Must add items on cart before you proceed to checkout.</p>
                     <Link href= '/'>

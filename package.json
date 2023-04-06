@@ -9,8 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.11.16",
+    "@mui/system": "^5.11.16",
     "@reduxjs/toolkit": "^1.9.3",
     "@types/googlemaps": "^3.43.3",
+    "@types/material-ui": "^0.21.12",
     "@types/node": "18.15.3",
     "@types/react": "^18.0.33",
     "@types/react-dom": "18.0.11",
