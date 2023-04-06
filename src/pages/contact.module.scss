@@ -2,12 +2,20 @@
 .wrapper{
     margin-top: 50px;
 }
+
 .formdata {
+    display: flex;
+    justify-content: center;
+   
+    form{
+        width:fit-content;
+    }
     .contact {
         h1 {
             color: $white-color;
         }
     }
+  
     background-color: cadetblue;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
@@ -42,6 +50,9 @@
     background-color: burlywood;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    &.img{
+        width:100%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -62,7 +73,15 @@
         height:400px;
         border-top-right-radius: 0rem;
         border-bottom-left-radius: 0.5rem;
+     
     }
     
 
+}
+@media (max-width: 861px) {
+    .imageBg {
+        img{
+            width:100%;
+        }
+    }
 }

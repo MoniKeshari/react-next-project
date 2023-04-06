@@ -1,4 +1,4 @@
-"use client";  // this is a client component
+// "use client";  // this is a client component
 import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -11,6 +11,8 @@ import Link from 'next/link';
 import {
     Box, SwipeableDrawer, Button, List, ListItem
 } from '@mui/material';
+import { MobileView } from 'react-device-detect';
+import MobileResponsiveView from './headerMobile';
 type Anchor = 'right';
 const Header = () => {
     const [show, setShow] = useState(false);
@@ -90,9 +92,12 @@ const Header = () => {
             <header className={styles.header}>
                 <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
                     <h3>Shopping View</h3>
-
+                 
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
+                 
                         <ul className="navbar-nav">
+                            <li className={styles.mobileviewdata}>   <MobileResponsiveView /></li>
+                     
                             <li> <Link className="nav-item active" href="/">
                                 Home
                             </Link></li>
@@ -130,7 +135,9 @@ const Header = () => {
                             </li>
 
                         </ul>
+                    
                     </div>
+                  
                 </nav>
             </header>
         </>

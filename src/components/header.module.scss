@@ -8,6 +8,25 @@
   z-index: 1;
 }
 
+
+@media (min-width: 767px) {
+  .content {
+    ul {
+      li {
+        &.mobileviewdata {
+          display: none;
+        }
+
+      }
+    }
+
+  }
+
+
+}
+
+
+
 .wrapper {
   h3 {
     color: $white-color;
@@ -72,5 +91,21 @@
 
     }
   }
+
+}
+@media (max-width: 768px) {
+  .content {
+    ul {
+      li {
+       
+        &.mobileviewdata {
+          display: block;
+        }
+
+      }
+    }
+
+  }
+
 
 }
