@@ -31,8 +31,7 @@ const MyCarousel = () => {
       <div className="carousel-inner">
         {carouseldata.map((item, index) => (
           <div key={index} className={`carousel-item ${styles.containerdata} ${index === currentIndex ? 'active' : ''}`}>
-            <Image src={`/${item.imageUrl}`} alt={item.title} height={500} width={1400}  className={styles.imgdata}
-             />
+            <Image src={`/${item.imageUrl}`} alt={item.title} height={500} width={1400} />
             <div className="carousel-caption">
               <h5>{item.title}</h5>
             </div>

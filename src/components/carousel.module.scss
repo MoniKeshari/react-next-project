@@ -1,9 +1,10 @@
 // Customize carousel styles
 .containerdata{
-  Image{
-    &.imgdata{
-      object-fit: cover;
-    }
+  img{
+   
+      object-fit:cover;
+      width:100%;
+ 
     
    
   }
