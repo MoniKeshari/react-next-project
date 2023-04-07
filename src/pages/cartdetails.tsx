@@ -18,7 +18,7 @@ const CartDetail = ({ item }: { item: any}) => {
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
                 return (
                     <>
-                        <div className={styles.container}>
+                        <div className={styles.container} key={id}>
                             <Link href={`/cardpost/${id.id}`} >
                                
                                 <div className={`${styles.wrapper} row `}>
