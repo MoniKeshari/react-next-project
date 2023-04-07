@@ -11,7 +11,7 @@ import {
 const ShimmerEffect = () => {
   return (
     <>
-      <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
+      <div className={`${styles.columncard} col-md-4  mx-0 mb-4`}>
         <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
           <ShimmerThumbnail height={250} width={500} className="m-0" rounded />
           <div className="card-body">

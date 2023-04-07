@@ -27,7 +27,7 @@ const CardData = ({ item }: { item:any}) => {
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
     return (
         <>
-            {isLoading ? (<ShimmerEffect />) : (<>     <div className={`${styles.columncard} col-md-4 col-lg-3 mx-0 mb-4`}>
+            {isLoading ? (<ShimmerEffect />) : (<>     <div className={`${styles.columncard} col-md-4  mx-0 mb-4`}>
                 <div className={`${styles.cardData} card p-0 overflow-hidden shadow h-100`}>
                     <Image src={`${item.image}`} alt='' height={500} width={249}/>
                     <div className='card-body'>

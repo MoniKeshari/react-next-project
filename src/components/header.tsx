@@ -11,6 +11,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {
     Box, SwipeableDrawer, Button, List, ListItem
 } from '@mui/material';
+import Router, { useRouter } from 'next/router';
 import MobileResponsiveView from './headerMobile';
 type Anchor = 'right';
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
     const [cartPresent, setCartPresent] = useState(false);
     const item = useAppSelector(state => state.counter.items)
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
-
+    const router = useRouter();
 
     const handleClick = () => {
 
@@ -49,7 +50,7 @@ const Header = () => {
     const [state, setState] = React.useState({
         right: false,
     });
-
+   
     const toggleDrawer =
         (anchor: Anchor, open: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -75,7 +76,8 @@ const Header = () => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <ArrowBackIcon onClick={toggleDrawer(anchor, false)} />
+            
+               
                 <ListItem disablePadding>
                     {show && (<div className={styles.showdata}><CartDetail item={item} /></div>)}
                 </ListItem>
@@ -85,7 +87,7 @@ const Header = () => {
 
         </Box>
     );
-
+ 
     return (
         <>
             <header className={styles.header}>
@@ -113,7 +115,6 @@ const Header = () => {
                             </Link></li>
                             <li>
                                 <div className={styles.cart}>
-                                    <Link className="nav-item" href=''>
                                         {(['right'] as const).map((anchor) => (
                                             <React.Fragment key={anchor}>
                                                 <div className={styles.counter}>
@@ -128,12 +129,14 @@ const Header = () => {
                                                     onClose={toggleDrawer(anchor, true)}
                                                     onOpen={toggleDrawer(anchor, true)}
                                                 >
+                                                   
+                                                      <Link  href= '' onClick={toggleDrawer(anchor, false)}> <ArrowBackIcon /></Link>
                                                     {list(anchor)}
                                                 </SwipeableDrawer>
                                             </React.Fragment>
                                         ))}
 
-                                    </Link>
+                                    
                                 </div>
                             </li>
 

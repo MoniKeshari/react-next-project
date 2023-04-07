@@ -41,7 +41,7 @@ export interface Item {
     id: number;
     // other properties of an item, such as name, price, etc.
     quantity: number;
-    items: Item[];
+    // items: Item[];
      
 
 }
