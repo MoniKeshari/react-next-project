@@ -130,7 +130,7 @@ const Header = () => {
                                                     onOpen={toggleDrawer(anchor, true)}
                                                 >
                                                    
-                                                      <Link  href= '' onClick={toggleDrawer(anchor, false)}> <ArrowBackIcon /></Link>
+                                                  <ArrowBackIcon onClick={toggleDrawer(anchor, false)}/>
                                                     {list(anchor)}
                                                 </SwipeableDrawer>
                                             </React.Fragment>
