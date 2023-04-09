@@ -1,24 +1,29 @@
-.container{
-   a{
-    text-decoration: none;
-   }
-            
-           
+.container {
+    a {
+        text-decoration: none;
+    }
+
+
 }
 
 .wrapper {
     display: flex;
     justify-content: center;
+
     .imgpic {
         padding: 1rem;
         border-radius: 1rem;
 
         img {
-            width: 100%;
-            height:100%;
+            // width: 100%;
+            height: 100%;
             border-radius: 1rem;
             cursor: pointer;
             transition: transform 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;
         }
     }
 
@@ -82,7 +87,8 @@
 
 
                 }
-             h6{
+
+                h6 {
                     text-transform: capitalize;
                     color: #333;
                 }
