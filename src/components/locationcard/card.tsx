@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { productItem } from '@/types/hometype';
+import { ProductItemData } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
 import styles from './cardSummary.module.scss'
 import { Button } from 'react-bootstrap';
 import ShimmerEffect from '@/pages/shimmer';
 import Image from 'next/image';
-const CardData = ({ item }: { item:productItem}) => {
+const CardData = ({ item }: { item:ProductItemData}) => {
     const dispatch = useAppDispatch();
     const handleClick = () => {
         dispatch(addToCart(item))

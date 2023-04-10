@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from '../components/footer.module.scss'
-import {footerItem} from '@/types/hometype'
+import {FooterItem} from '@/types/hometype'
 
-export default function footer({ id}: {id:footerItem}) {
+const footer=({ id}: {id:FooterItem})=>{
     return (
 
         <>
@@ -36,3 +36,4 @@ export default function footer({ id}: {id:footerItem}) {
     )
 
 }
+export default footer;

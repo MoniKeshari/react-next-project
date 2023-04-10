@@ -9,7 +9,7 @@ export interface Item {
     category: string;
   
 }
-export interface productItem extends Item {
+export interface ProductItemData extends Item {
     category: string;
     description: string;
     image: string;
@@ -19,9 +19,7 @@ export interface productItem extends Item {
     id:number;
 }
 
-export type product = productItem[];
-
-
+export type product = ProductItemData[];
 
 export interface CartState {
     items: Item[];
@@ -33,19 +31,18 @@ export interface User {
     slug: number;
 }
 
-export interface footerItem {
+export interface FooterItem {
     id: number;
     name: string;
-    img: string;
+    img: any;
     section: string;
 
 }
-export type footerdata = footerItem[]
-export type footerArray = footerItem[]
-export interface carouselItemData {
+export type footerdata = FooterItem[]
+export type footerArray = FooterItem[]
+export interface CarouselItemData {
     id: number;
-
     imageUrl: string;
     title: string;
 }
-export type carouselItem = carouselItemData[];
+export type carouselItem = CarouselItemData[];

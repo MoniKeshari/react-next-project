@@ -1,4 +1,4 @@
-// Customize carousel styles
+@import '../components/varialbes/variable.scss';
 .containerdata{
   img{
    
@@ -17,8 +17,8 @@
         object-fit: cover;
       }
       .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
+        background-color:$bg-333-color ;
+        color: $white-color;
         padding: 20px;
         text-align: center;
         h5 {
@@ -37,14 +37,14 @@
   .carousel-control-next {
     width: 5%;
     font-size: 2rem;
-    color: white;
+    color: $white-color;
     text-shadow: none;
     opacity: 0.5;
     &:hover {
-      color: white;
+      color: $white-color;
       text-decoration: none;
       opacity: 0.9;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: $bg-333-color;
     }
   }
   .carousel-control-prev-icon,
@@ -53,10 +53,10 @@
   }
   .carousel-indicators {
     li {
-      background-color: white;
+      background-color: $white-color;
       opacity: 0.5;
       &.active {
-        background-color: white;
+        background-color: $white-color;
         opacity: 1;
       }
     }

@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import footerdata from '../components/json/footer'
-import { footerItem } from "@/types/hometype";
+import { FooterItem } from "@/types/hometype";
 type LayoutProps = {
   children: ReactNode;
   className?: string;
@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Header />
       {page}
-      {footerdata.map((id: footerItem) => {
+      {footerdata.map((id: FooterItem) => {
         return (
           <Footer id={id} key={id.id} />
         )

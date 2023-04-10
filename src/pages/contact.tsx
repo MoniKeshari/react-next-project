@@ -15,6 +15,7 @@ const Contact = () => {
         try {
             const data = await createUser(name, email, phone)
             setUser(data);
+            console.log(user);
             if (data) {
                 setName('');
                 setEmail('');

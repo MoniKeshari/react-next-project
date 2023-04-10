@@ -1,13 +1,10 @@
 
-
+@import '../components/varialbes/variable.scss';
 .content1 {
     height: 200px;
     width: 100px;
-    background-color: aqua;
+    background-color: $aqua-color;
     position: relative;
-
-
-
     top: 0px;
     z-index: 9;
 
@@ -16,7 +13,7 @@
 .content2 {
     height: 100px;
     width: 100px;
-    background-color: yellow;
+    background-color: $yellow-color;
     position: absolute;
     z-index: 1;
     
@@ -26,7 +23,7 @@
 .content3 {
     height: 100px;
     width: 100px;
-    background-color:red;
+    background-color:$red-color;
     position: absolute;
     z-index: 2;
    

@@ -4,24 +4,18 @@ import styles from '../pages/cartdetail.module.scss';
 import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit/createSlice';
 import Image from 'next/image';
 import Link from 'next/link';
-import { product, productItem } from '@/types/hometype';
-
-
-  
-  
+import { product, ProductItemData } from '@/types/hometype';
 const CartDetail = ({ item }: {item:product}) => {
     const dispatch = useAppDispatch();
-
-
     return (
         <>
-            {item?.map((id: productItem, index:number) => {
+            {item?.map((id: ProductItemData) => {
                 const originalPrice = id.price;
                 const discountPercentage = 10; // assuming 10% discount
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
                 return (
                     <>
-                        <div className={styles.container} key={index}>
+                        <div className={styles.container} key={id.id}>
                             <Link href={`/cardpost/${id.id}`} >
                                
                                 <div className={`${styles.wrapper} row `}>
@@ -69,11 +63,7 @@ const CartDetail = ({ item }: {item:product}) => {
                                         }>Remove</button></div>
 
                                         </div>
-
-
                                     </div>
-
-
                                 </div>
                             </Link>
                         </div>

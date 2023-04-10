@@ -1,4 +1,4 @@
-//public/Items.json
+
 import { carouselItem } from "@/types/hometype";
 
 const carousel: carouselItem =

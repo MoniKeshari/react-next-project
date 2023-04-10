@@ -9,18 +9,6 @@
    
     form{
         width:fit-content;
-    }
-    .contact {
-        h1 {
-            color: $white-color;
-        }
-    }
-  
-    background-color: cadetblue;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-
-    form {
         label {
             display: block;
             text-align: left;
@@ -41,13 +29,23 @@
             margin-top: 20px;
         }
     }
+    .contact {
+        h1 {
+            color: $white-color;
+        }
+    }
+  
+    background-color:$cadetblue-color ;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+
 }
 
 .imageBg {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: burlywood;
+    background-color:$burlywood-color ;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     &.img{

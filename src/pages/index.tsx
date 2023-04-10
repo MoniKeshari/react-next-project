@@ -1,8 +1,5 @@
-// import Search from "@/components/search";
 import CardData from "@/components/locationcard/card";
-// import LocationArea from "@/components/geolocation/geolocation";
-
-import { product, productItem } from "@/types/hometype";
+import { product, ProductItemData } from "@/types/hometype";
 import ControlledCarousel from "@/components/carousel";
 import Head from "next/head";
 export const getStaticProps = async () => {
@@ -19,8 +16,7 @@ const Home = ({ res }: { res: product }) => {
     return (
         <>
             <div>
-                {/* <LocationArea /> */}
-                {/* <Search /> */}
+               
                 <Head>
                     <title>
                         Home Page
@@ -31,7 +27,7 @@ const Home = ({ res }: { res: product }) => {
                 <div>
                     <section className='py-4 container'>
                         <div className='row justify-content-center'>
-                            {res.map((item: productItem) => {
+                            {res.map((item: ProductItemData) => {
                                 return (
                                     <>
                                         <CardData item={item} key={item.id} />

@@ -2,8 +2,7 @@
 import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CartDetail from '../pages/cartdetails';
 import EmptyCart from '@/pages/emptycart';
 import Link from 'next/link';
@@ -11,7 +10,6 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {
     Box, SwipeableDrawer, Button, List, ListItem
 } from '@mui/material';
-import { useRouter } from 'next/router';
 import MobileResponsiveView from './headerMobile';
 type Anchor = 'right';
 const Header = () => {
@@ -20,8 +18,7 @@ const Header = () => {
     const [cartPresent, setCartPresent] = useState(false);
     const item = useAppSelector(state => state.counter.items)
     
-    const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
-    const router = useRouter();
+    const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0))
 
     const handleClick = () => {
 

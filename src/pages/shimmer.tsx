@@ -1,6 +1,4 @@
 
-// import { Button } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 import styles from '../components/locationcard/cardSummary.module.scss';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'

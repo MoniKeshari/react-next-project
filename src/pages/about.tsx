@@ -1,42 +1,42 @@
 import React from 'react'
 import Image from 'next/image';
 import { Button } from 'react-bootstrap';
-import styles from  './about.module.scss';
-function about() {
+import styles from './about.module.scss';
+const about = () => {
   return (
     <>
-     <div className={styles.wrapper}>
-      <div className="container-fluid text-center">
-        <div className=" row justify-content-center ">
-          <div className='col-md-4  col-sm-8 col-xs-12 mt-5'>
-            <h1>About Us!</h1>
-            <p>About pages are personal to you and your company, so the structure of your about page will vary based on what you want to highlight. However, you’ll start with the same writing process.</p>
-            
-            <a href="/learnmore"><Button>Learn More
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                </svg>
-              </span>
+      <div className={styles.wrapper}>
+        <div className="container-fluid text-center">
+          <div className=" row justify-content-center ">
+            <div className='col-md-4  col-sm-8 col-xs-12 mt-5'>
+              <h1>About Us!</h1>
+              <p>About pages are personal to you and your company, so the structure of your about page will vary based on what you want to highlight. However, you’ll start with the same writing process.</p>
 
-            </Button></a>
-          </div>
+              <a href="/learnmore"><Button>Learn More
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                  </svg>
+                </span>
 
-          <div className='col-md-6  col-sm-8 col-xs-12'>
-            <Image
-              src="/homeimg/about.svg"
-              alt="Description of the image"
-              width={500}
-              height={500}
-            />
+              </Button></a>
+            </div>
 
+            <div className='col-md-6  col-sm-8 col-xs-12'>
+              <Image
+                src="/homeimg/about.svg"
+                alt="Description of the image"
+                width={500}
+                height={500}
+              />
+
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
 
   );
 }
 
-export default about
+export default about;

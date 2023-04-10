@@ -1,3 +1,4 @@
+@import '../components/varialbes/variable.scss';
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -15,39 +16,25 @@
 
   button {
     &.buttonR {
-      border-color: seagreen;
-      background-color: seagreen;
+      border-color: $seagreen-color;
+      background-color: $seagreen-color;
 
       span {
-        color: aliceblue;
+        color: $bg-aliceblue-color;
       }
     }
   }
 
 
   &>div {
-
-
-    p {
-      &:contains("Empty!") {
-        color: red;
-      }
-
-    }
-
     button {
       width: 70%;
       height: 100%;
       border-radius: 1rem;
-      border-color: white;
+      border-color:$white-color;
       padding: 0.5rem;
 
 
     }
-
-
-
-
-
   }
 }
