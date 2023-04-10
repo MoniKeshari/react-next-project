@@ -15,7 +15,9 @@
         border-radius: 1rem;
 
         img {
-            height: 100%;
+            height: max-content;
+            margin-top: 50px;
+        
             border-radius: 1rem;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -60,11 +62,15 @@
             list-style: none;
 
             li {
-                p {
+              & p {
                     font: 1em sans-serif;
+                    text-transform: capitalize;
+                    font-size:larger;
+                    font-weight: bold;
 
                     &.desc {
                         margin-top: 10px;
+                        color: $red-color;
                     }
 
                     span {
@@ -77,6 +83,7 @@
 
                         &.discountprice {
                             margin-left: 10px;
+                            color: $seagreen-color;
                         }
                     }
 
@@ -86,6 +93,8 @@
                 h6 {
                     text-transform: capitalize;
                     color: $bg-333-color;
+                    font-family: Arial, Helvetica, sans-serif;
+                  
                 }
 
             }

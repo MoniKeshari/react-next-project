@@ -3,6 +3,31 @@
 .cardData {
     cursor: pointer;
     height: 450px;
+   
+      
+        .badge {
+            position: absolute;
+            background-color: $seagreen-color;
+            padding: 10px;
+            border-radius: 5px 0px 0px 0px;
+            color: $white-color;
+            z-index: 1;
+            // transform: rotate(340deg);
+            
+        }
+        .badge:after {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid $seagreen-color;
+            content: '';
+            z-index: 1;
+            // transform: rotateY(331deg);
+        }
+    
     img {
         height:200px;
         object-fit: cover;
@@ -37,6 +62,8 @@
             }
 
             text-align: center;
+            text-transform: capitalize;
+        
         }
     }
 

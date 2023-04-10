@@ -33,21 +33,18 @@ const CardPost = ({ postcard }: any) => {
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
 
     return (
-
-
         <>
             <div className={`${styles.wrapper} row`} key={id}>
                 <div className={`${styles.imgpic} col-md-4`}>
                     <Image
                         src={image}
                         alt="Description of the image"
-                        width={200}
+                        width={400}
                         height={200}
                     />
-
                 </div>
 
-                <div className='col-md-6 mt-5 '>
+                <div className={`${styles.content} col-md-6 mt-5`}>
                     <div className='row justify-content-center'>
 
                         <div className={`${styles.containerData} col-md-4`}>
@@ -56,7 +53,7 @@ const CardPost = ({ postcard }: any) => {
                                     <p className={styles.desc}>{category}</p>
                                 </li>
                                 <li>
-                                    <h6>{title}</h6>
+                                    <h5>{title}</h5>
                                 </li>
                                 <li>
                                     <p className="card-text">
@@ -66,6 +63,7 @@ const CardPost = ({ postcard }: any) => {
                                 </li>
                                 <li>
                                     <p>{description}</p>
+
                                 </li>
 
                             </ul>
