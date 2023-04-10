@@ -4,21 +4,34 @@ import styles from '../pages/cartdetail.module.scss';
 import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit/createSlice';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ListItemButton } from '@mui/material';
-
-const CartDetail = ({ item }: { item: any}) => {
+import { product, productItem } from '@/types/hometype';
+interface Item {
+    price: number;
+    id: number;
+    image: string;
+    category: string;
+    title: string;
+    quantity: number;
+  }
+  
+  interface CartDetailProps {
+    item: Item[];
+  }
+  
+  
+const CartDetail = ({ item }: CartDetailProps) => {
     const dispatch = useAppDispatch();
 
 
     return (
         <>
-            {item?.map((id: any) => {
+            {item?.map((id: Item, index:number) => {
                 const originalPrice = id.price;
                 const discountPercentage = 10; // assuming 10% discount
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
                 return (
                     <>
-                        <div className={styles.container} key={id}>
+                        <div className={styles.container} key={index}>
                             <Link href={`/cardpost/${id.id}`} >
                                
                                 <div className={`${styles.wrapper} row `}>

@@ -19,6 +19,7 @@ const Header = () => {
     const [empty, setEmpty] = useState(false);
     const [cartPresent, setCartPresent] = useState(false);
     const item = useAppSelector(state => state.counter.items)
+    
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0));
     const router = useRouter();
 
