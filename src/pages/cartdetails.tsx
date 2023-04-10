@@ -5,27 +5,17 @@ import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit
 import Image from 'next/image';
 import Link from 'next/link';
 import { product, productItem } from '@/types/hometype';
-interface Item {
-    price: number;
-    id: number;
-    image: string;
-    category: string;
-    title: string;
-    quantity: number;
-  }
-  
-  interface CartDetailProps {
-    item: Item[];
-  }
+
+
   
   
-const CartDetail = ({ item }: CartDetailProps) => {
+const CartDetail = ({ item }: {item:product}) => {
     const dispatch = useAppDispatch();
 
 
     return (
         <>
-            {item?.map((id: Item, index:number) => {
+            {item?.map((id: productItem, index:number) => {
                 const originalPrice = id.price;
                 const discountPercentage = 10; // assuming 10% discount
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));

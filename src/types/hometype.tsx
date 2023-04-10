@@ -1,38 +1,42 @@
 
 export interface Item {
-  id: number;
-  // other properties of an item, such as name, price, etc.
-  quantity: number;
+    id: number;
+    quantity: number;
+    description: string;
+    image: string;
+    price: number;
+    title: string;
+    category: string;
+  
 }
-
-
 export interface productItem extends Item {
-  category: string;
-  description: string;
-  image: string;
-  price: number;
-  title: string;
+    category: string;
+    description: string;
+    image: string;
+    price: number;
+    title: string;
+    quantity:number;
+    id:number;
 }
 
 export type product = productItem[];
 
+
+
 export interface CartState {
     items: Item[];
 }
-
-
-
 export interface User {
     userId: number;
     title: string;
     completed: boolean;
-    slug:number;
+    slug: number;
 }
 
 export interface footerItem {
     id: number;
     name: string;
-    img: any;
+    img: string;
     section: string;
 
 }
@@ -42,6 +46,6 @@ export interface carouselItemData {
     id: number;
 
     imageUrl: string;
-    title:string;
+    title: string;
 }
 export type carouselItem = carouselItemData[];

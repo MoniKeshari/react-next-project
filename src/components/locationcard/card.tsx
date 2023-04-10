@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { product, productItem } from '@/types/hometype';
+import { productItem } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
 import styles from './cardSummary.module.scss'

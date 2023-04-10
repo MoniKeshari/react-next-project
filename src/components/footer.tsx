@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../components/footer.module.scss'
-import { footerItem, footerdata } from '@/types/hometype'
+import {footerItem} from '@/types/hometype'
 
 export default function footer({ id}: {id:footerItem}) {
     return (
@@ -32,8 +32,6 @@ export default function footer({ id}: {id:footerItem}) {
                 </div>
 
             </div></>
-
-
 
     )
 
