@@ -8,6 +8,8 @@ export interface Item {
     title: string;
     category: string;
     rating:Rate;
+    filter:any;
+    
   
 }
 interface Rate{
@@ -22,6 +24,8 @@ export interface ProductItemData extends Item {
     quantity:number;
     rating:Rate;
     id:number;
+    filter:any;
+   
     
 }
 
@@ -34,9 +38,13 @@ export interface ContextData{
     params:Params;
 }
 export type product = ProductItemData[];
+export type FilterValue = 'all' | "men's clothing" | 'jewelery' | 'electronics' | "women's clothing";
 
 export interface CartState {
     items: Item[];
+    products: ProductItemData[];
+    isLoading: boolean;
+    filterValue: FilterValue;
 }
 export interface User {
     userId: number;

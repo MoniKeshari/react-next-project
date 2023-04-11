@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ProductItemData } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
@@ -7,9 +7,11 @@ import { Button } from 'react-bootstrap';
 import ShimmerEffect from '@/pages/shimmer';
 import Image from 'next/image';
 import Link from 'next/link';
-const CardData = ({ item, isLoading }: { item: ProductItemData, isLoading: boolean }) => {
-    console.log(item, 'item');
 
+
+const CardData = ({ item, isLoading }: { item: ProductItemData, isLoading: boolean }) => {
+    const catdata = item?.category;
+  
     const dispatch = useAppDispatch();
     const handleClick = () => {
         dispatch(addToCart(item))
@@ -17,7 +19,7 @@ const CardData = ({ item, isLoading }: { item: ProductItemData, isLoading: boole
     const rating = item?.rating?.rate;
     const ratingVisual = item?.rating?.rate >= 4;
     const originalPrice = item.price;
-    const discountPercentage = 2; 
+    const discountPercentage = 2;
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
     return (
         <>

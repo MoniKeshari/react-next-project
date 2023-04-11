@@ -10,13 +10,33 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {
     Box, SwipeableDrawer, Button, List, ListItem
 } from '@mui/material';
+
+import MenuItem from '@mui/material/MenuItem';
 import MobileResponsiveView from './headerMobile';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilterValue } from '@/ReduxToolkit/createSlice';
+// import { FilterValue } from '@/types/hometype';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 type Anchor = 'right';
 const Header = () => {
+    const dispatch = useDispatch();
+    const categoriesData = [
+        "women's clothing", "men's clothing", 'electronics', 'jewelery', 'all']
+
+    const handleFilterChange = (e: SelectChangeEvent<any>, child: React.ReactNode) => {
+        dispatch(setFilterValue(e.target.value.toLowerCase()));
+
+
+    };
+
+
+
     const [show, setShow] = useState(false);
     const [empty, setEmpty] = useState(false);
     const [cartPresent, setCartPresent] = useState(false);
-    const item = useAppSelector(state => state.counter.items)
+
+    const item = useAppSelector(state => state.counter.items);
+
 
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0))
 
@@ -85,7 +105,7 @@ const Header = () => {
 
         </Box>
     );
-
+    const { filterValue } = useSelector((state: any) => state.counter.filterValue);
     return (
         <>
             <header className={styles.header}>
@@ -97,7 +117,24 @@ const Header = () => {
                         </li>
                     </div>
 
+                    <div className={styles.dropdownData}>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={filterValue} onChange={handleFilterChange}
+                        >
+                            {categoriesData.map((id: any) => {
 
+
+                                return (
+                                    <MenuItem value={id.toLowerCase()} key={id}>{id}</MenuItem>
+                                )
+                            })}
+
+
+                        </Select>
+
+                    </div>
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
                         <ul className="navbar-nav">
 
@@ -118,7 +155,6 @@ const Header = () => {
                                             <div className={styles.counter}>
                                                 <span>{itemCount || 0} </span> </div>
                                             <Button onClick={toggleDrawer(anchor, true)}>{
-
                                                 <FaShoppingCart className={styles.icon} onClick={handleClick} />
                                             }</Button>
                                             <SwipeableDrawer
