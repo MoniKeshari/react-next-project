@@ -3,33 +3,30 @@
 .cardData {
     cursor: pointer;
     height: 450px;
-   
-      
-        .badge {
-            position: absolute;
-            background-color: $seagreen-color;
-            padding: 10px;
-            border-radius: 5px 0px 0px 0px;
-            color: $white-color;
-            z-index: 1;
-            // transform: rotate(340deg);
-            
-        }
-        .badge:after {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-bottom: 10px solid transparent;
-            border-left: 10px solid $seagreen-color;
-            content: '';
-            z-index: 1;
-            // transform: rotateY(331deg);
-        }
-    
+    .badge {
+        position: absolute;
+        background-color: $seagreen-color;
+        padding: 10px;
+        border-radius: 5px 0px 0px 0px;
+        color: $white-color;
+        z-index: 1;
+        
+    }
+
+    .badge:after {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $seagreen-color;
+        content: '';
+        z-index: 1;
+    }
+
     img {
-        height:200px;
+        height: 200px;
         object-fit: cover;
         margin-left: auto;
         margin-right: auto;
@@ -37,24 +34,22 @@
         transition: transform 0.3s ease;
 
     }
-    &.shimmercard{
+
+    &.shimmercard {
         display: flex;
         justify-content: center;
     }
 
     >div {
-
         h5,
         p {
             font: 1em sans-serif;
 
             span {
                 &.originalPrice {
-                    color:$darkgray-color;
+                    color: $darkgray-color;
                     text-decoration: line-through;
-
                 }
-
 
                 &.discountprice {
                     margin-left: 10px;
@@ -63,31 +58,48 @@
 
             text-align: center;
             text-transform: capitalize;
-        
+
         }
     }
 
     & .cardFooter {
         display: flex;
-        justify-content: right;
+        justify-content: space-between;
 
-        small {
-            Button {
-                &.dec {
-                    border-top-right-radius: 0;
-                    border-bottom-right-radius: 0;
+        button {
+
+            &.buttondec {
+                background-color: $seagreen-color;
+                border-color: $seagreen-color;
+                border-radius: 2rem;
+
+                svg {
+                    vertical-align: text-top;
+                    margin-left: 8px;
+                   
                 }
-
-                &.inc {
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
-
-                }
- 
+            }
+            &.buttonadd{
+                background-color: $bg-333-color;
+                border-color: $bg-333-color;
 
             }
 
+            &.dec {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &.inc {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+            }
+
+
         }
+
+
 
     }
 

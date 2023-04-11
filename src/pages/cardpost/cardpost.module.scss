@@ -1,0 +1,128 @@
+@import '../../components/varialbes/variable.scss';
+
+@mixin samedata {
+    font-family: sans-serif;
+    text-transform: capitalize;
+
+}
+
+.container {
+    a {
+        text-decoration: none;
+    }
+
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    .badge {
+        position: absolute;
+        background-color: $seagreen-color;
+        padding: 10px;
+        border-radius: 5px 5px 0px 5px;
+        color: $white-color;
+        z-index: 1;
+        // transform: rotate(340deg);
+
+    }
+
+    .badge:after {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $seagreen-color;
+        content: '';
+        z-index: 1;
+        // transform: rotateY(331deg);
+    }
+
+    .imgpic {
+        padding: 1rem;
+
+
+        img {
+            height: 400px;
+            width: fit-content;
+            cursor: pointer;
+            margin-top: auto;
+            transition: transform 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;
+        }
+    }
+
+
+
+
+    .containerData {
+
+        ul {
+            list-style: none;
+
+            li {
+                h2 {
+                    font-weight: bold;
+                    color: $red-color;
+                    font-size: larger;
+                    @include samedata;
+
+
+                }
+
+                p {
+                    @include samedata;
+                    margin-top: 12px;
+                    font-size: larger;
+
+
+
+                    &.description {
+                        font-size: small;
+                    }
+
+                }
+
+                h5 {
+                    font-weight: 300;
+                    font-size: smaller;
+                    @include samedata;
+
+
+
+                }
+
+
+                span {
+                    &.originalPrice {
+                        color: $darkgray-color;
+                        text-decoration: line-through;
+
+                    }
+
+
+                    &.discountprice {
+                        margin-left: 10px;
+                        color: $seagreen-color;
+                    }
+                }
+
+
+
+
+
+            }
+        }
+    }
+
+}
+
+.wrapper:hover img {
+    transform: scale(1.05);
+}

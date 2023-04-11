@@ -1,12 +1,13 @@
 
-import styles from '../cartdetail.module.scss';
+import { ContextData, ProductItemData } from '@/types/hometype';
+import styles from './cardpost.module.scss';
 import Image from 'next/image';
 export async function getStaticPaths() {
 
     const res = await fetch('https://fakestoreapi.com/products');
     const cardposts = await res.json();
 
-    const paths = cardposts.map((post: any) => (
+    const paths = cardposts.map((post: ProductItemData) => (
         {
             params: { pageno: post.id.toString() },
         }));
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
     return { paths, fallback: false };
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: ContextData) {
     const id = context.params.pageno;
 
     const res = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -26,16 +27,17 @@ export async function getStaticProps(context: any) {
         },
     };
 }
-const CardPost = ({ postcard }: any) => {
-    const { id, description, image, category, title, price } = postcard;
+const CardPost = ({ postcard }: {postcard:ProductItemData} ) => {
+    const { id, description, image, category, title, price, rating } = postcard;
     const originalPrice = price;
     const discountPercentage = 10; // assuming 10% discount
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
-
+    const ratingVisual = rating?.rate >= 4;
     return (
         <>
             <div className={`${styles.wrapper} row`} key={id}>
                 <div className={`${styles.imgpic} col-md-4`}>
+                {ratingVisual && (<> <span className={styles.badge}>Best Seller</span></>)}
                     <Image
                         src={image}
                         alt="Description of the image"
@@ -50,7 +52,7 @@ const CardPost = ({ postcard }: any) => {
                         <div className={`${styles.containerData} col-md-4`}>
                             <ul>
                                 <li>
-                                    <p className={styles.desc}>{category}</p>
+                                    <h2 className={styles.cate}>{category}</h2>
                                 </li>
                                 <li>
                                     <h5>{title}</h5>
@@ -62,7 +64,7 @@ const CardPost = ({ postcard }: any) => {
                                     </p>
                                 </li>
                                 <li>
-                                    <p>{description}</p>
+                                    <p className={styles.description}>{description}</p>
 
                                 </li>
 
@@ -78,10 +80,6 @@ const CardPost = ({ postcard }: any) => {
             </div>
 
         </>
-
-
-
-
     )
 }
 export default CardPost;

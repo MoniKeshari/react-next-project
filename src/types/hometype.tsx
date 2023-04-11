@@ -7,7 +7,11 @@ export interface Item {
     price: number;
     title: string;
     category: string;
+    rating:Rate;
   
+}
+interface Rate{
+    rate:number;
 }
 export interface ProductItemData extends Item {
     category: string;
@@ -16,9 +20,19 @@ export interface ProductItemData extends Item {
     price: number;
     title: string;
     quantity:number;
+    rating:Rate;
     id:number;
+    
 }
 
+interface Params{
+    params:number;
+    pageno:number;
+
+}
+export interface ContextData{
+    params:Params;
+}
 export type product = ProductItemData[];
 
 export interface CartState {

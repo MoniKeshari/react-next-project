@@ -17,7 +17,7 @@ const Header = () => {
     const [empty, setEmpty] = useState(false);
     const [cartPresent, setCartPresent] = useState(false);
     const item = useAppSelector(state => state.counter.items)
-    
+
     const itemCount = useAppSelector(state => state.counter.items.reduce((acc, item) => acc + item.quantity, 0))
 
     const handleClick = () => {
@@ -48,7 +48,7 @@ const Header = () => {
     const [state, setState] = React.useState({
         right: false,
     });
-   
+
     const toggleDrawer =
         (anchor: Anchor, open: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -74,8 +74,8 @@ const Header = () => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-            
-               
+
+
                 <ListItem disablePadding>
                     {show && (<div className={styles.showdata}><CartDetail item={item} /></div>)}
                 </ListItem>
@@ -85,7 +85,7 @@ const Header = () => {
 
         </Box>
     );
- 
+
     return (
         <>
             <header className={styles.header}>
@@ -113,28 +113,28 @@ const Header = () => {
                             </Link></li>
                             <li>
                                 <div className={styles.cart}>
-                                        {(['right'] as const).map((anchor) => (
-                                            <React.Fragment key={anchor}>
-                                                <div className={styles.counter}>
-                                                    <span>{itemCount || 0} </span> </div>
-                                                <Button onClick={toggleDrawer(anchor, true)}>{
+                                    {(['right'] as const).map((anchor) => (
+                                        <React.Fragment key={anchor}>
+                                            <div className={styles.counter}>
+                                                <span>{itemCount || 0} </span> </div>
+                                            <Button onClick={toggleDrawer(anchor, true)}>{
 
-                                                    <FaShoppingCart className={styles.icon} onClick={handleClick} />
-                                                }</Button>
-                                                <SwipeableDrawer
-                                                    anchor={anchor}
-                                                    open={state[anchor]}
-                                                    onClose={toggleDrawer(anchor, true)}
-                                                    onOpen={toggleDrawer(anchor, true)}
-                                                >
-                                                   
-                                                  <ArrowBackIcon onClick={toggleDrawer(anchor, false)}/>
-                                                    {list(anchor)}
-                                                </SwipeableDrawer>
-                                            </React.Fragment>
-                                        ))}
+                                                <FaShoppingCart className={styles.icon} onClick={handleClick} />
+                                            }</Button>
+                                            <SwipeableDrawer
+                                                anchor={anchor}
+                                                open={state[anchor]}
+                                                onClose={toggleDrawer(anchor, true)}
+                                                onOpen={toggleDrawer(anchor, true)}
+                                            >
+                                                <ArrowBackIcon onClick={toggleDrawer(anchor, false)} />
 
-                                    
+                                                {list(anchor)}
+                                            </SwipeableDrawer>
+                                        </React.Fragment>
+                                    ))}
+
+
                                 </div>
                             </li>
 

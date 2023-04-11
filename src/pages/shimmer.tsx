@@ -28,11 +28,15 @@ const ShimmerEffect = () => {
             </p>
           </div>
           <div className={`${styles.cardFooter} card-footer`}>
-            <small className="text-muted">
+          <div>
+         
               <ShimmerButton size="md"/>
-            </small>
           </div>
-        </div>
+          <div>
+          <ShimmerButton size="md"/>
+          </div>
+          </div>
+          </div>
       </div>
     </>
 

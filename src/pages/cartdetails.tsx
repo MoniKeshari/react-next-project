@@ -28,7 +28,7 @@ const CartDetail = ({ item }: {item:product}) => {
                                         />
                                     </div>
 
-                                    <div className='col-md-6 mt-5 '>
+                                    <div className='col-md-8 mt-5 '>
                                         <div className='row justify-content-center'>
 
                                             <div className={`${styles.containerData} col-md-4`}>
