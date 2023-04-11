@@ -2,6 +2,8 @@
 import { ContextData, ProductItemData } from '@/types/hometype';
 import styles from './cardpost.module.scss';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import CardPostShimmer from './cardpostshimmer';
 export async function getStaticPaths() {
 
     const res = await fetch('https://fakestoreapi.com/products');
@@ -27,22 +29,31 @@ export async function getStaticProps(context: ContextData) {
         },
     };
 }
-const CardPost = ({ postcard }: {postcard:ProductItemData} ) => {
+const CardPost = ({ postcard }: { postcard: ProductItemData }) => {
     const { id, description, image, category, title, price, rating } = postcard;
     const originalPrice = price;
     const discountPercentage = 10; // assuming 10% discount
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
     const ratingVisual = rating?.rate >= 4;
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }, []);
     return (
         <>
-            <div className={`${styles.wrapper} row`} key={id}>
+            {isLoading ? (<><CardPostShimmer /></>) : (<>    <div className={`${styles.wrapper} row`} key={id}>
                 <div className={`${styles.imgpic} col-md-4`}>
-                {ratingVisual && (<> <span className={styles.badge}>Best Seller</span></>)}
+                    {ratingVisual && (<> <span className={styles.badge}>Best Seller</span></>)}
                     <Image
                         src={image}
                         alt="Description of the image"
                         width={400}
-                        height={200}
+                        height={300}
                     />
                 </div>
 
@@ -77,7 +88,8 @@ const CardPost = ({ postcard }: {postcard:ProductItemData} ) => {
                 </div>
 
 
-            </div>
+            </div></>)}
+
 
         </>
     )
