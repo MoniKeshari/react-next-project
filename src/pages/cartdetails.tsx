@@ -5,19 +5,115 @@ import { decrementQuantity, incrementQuantity, removeItem } from '@/ReduxToolkit
 import Image from 'next/image';
 import Link from 'next/link';
 import { product, ProductItemData } from '@/types/hometype';
-const CartDetail = ({ item }: {item:product}) => {
+import { useState } from 'react';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
+import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+    '& .MuiDialogContent-root': {
+        padding: theme.spacing(2),
+    },
+    '& .MuiDialogActions-root': {
+        padding: theme.spacing(1),
+    },
+}));
+export interface DialogTitleProps {
+    id: string;
+    children?: React.ReactNode;
+    onClose: () => void;
+}
+function BootstrapDialogTitle(props: DialogTitleProps) {
+    const { children, onClose, ...other } = props;
+
+    return (
+        <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+            {children}
+            {onClose ? (
+                <IconButton
+                    aria-label="close"
+                    onClick={onClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </DialogTitle>
+    );
+}
+const CartDetail = ({ item }: { item: product }) => {
     const dispatch = useAppDispatch();
+    const [open, setOpen] = useState(false);
+    const [selectedData, setSelectedData] = useState(null);
+
+    const handleClose = () => {
+        setOpen(false);
+
+    };
+
+    const handleRemoveCard = (id: any) => {
+        setSelectedData(id)
+        setOpen(true);
+    };
+
+
     return (
         <>
+            {
+                open && (
+                    <>
+                        <BootstrapDialog
+                            onClose={handleClose}
+                            aria-labelledby="customized-dialog-title"
+                            open={open}
+                        >
+                            <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+                                Remove Item
+                            </BootstrapDialogTitle>
+                            <DialogContent dividers>
+
+                                <Typography gutterBottom>
+                                    Are You Sure To Remove This Item.
+                                </Typography>
+                                <Typography gutterBottom>
+                                    Product Id:{selectedData}
+                                </Typography>
+                            </DialogContent>
+                            <DialogActions>
+                                <Button autoFocus onClick={() => {
+                                    dispatch(removeItem(selectedData))
+                                    setOpen(false)
+                                }}>
+                                    Yes
+                                </Button>
+                            </DialogActions>
+                        </BootstrapDialog>
+
+                    </>
+                )
+            }
             {item?.map((id: ProductItemData) => {
                 const originalPrice = id.price;
                 const discountPercentage = 10; // assuming 10% discount
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
+
+
                 return (
                     <>
                         <div className={styles.container} key={id.id}>
+
                             <Link href={`/cardpost/${id.id}`} >
-                               
+
                                 <div className={`${styles.wrapper} row `}>
                                     <div className={`${styles.imgpic} col-md-4`}>
                                         <Image
@@ -48,19 +144,23 @@ const CartDetail = ({ item }: {item:product}) => {
                                                 </ul>
                                             </div>
                                             <div className='col-md-2 '> <button className={styles.dec} onClick={() => dispatch(decrementQuantity(id.id))
-                                        }><span>-</span></button>
+                                            }><span>-</span></button>
 
-                                        </div>
-                                        <div className={`${styles.quantity} col-md-2`}>
+                                            </div>
+                                            <div className={`${styles.quantity} col-md-2`}>
 
-                                            <span>{id.quantity}</span>
+                                                <span>{id.quantity}</span>
 
-                                        </div>
-                                        <div className='col-md-2 '> <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>+</span></button></div>
+                                            </div>
+                                            <div className='col-md-2 '> <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>+</span></button></div>
 
-                                        <div className='col-md-2 '> <button className={styles.rem} onClick={() => dispatch(removeItem(id.id))
-
-                                        }>Remove</button></div>
+                                            <div className='col-md-2 '>
+                                                <button className={styles.rem}
+                                                    onClick={() => handleRemoveCard(id.id)}
+                                                >
+                                                    Remove
+                                                </button>
+                                            </div>
 
                                         </div>
                                     </div>
