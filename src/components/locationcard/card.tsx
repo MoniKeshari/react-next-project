@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ProductItemData } from '@/types/hometype';
 import { useAppDispatch } from '@/ReduxToolkit/hooks';
 import { addToCart } from '@/ReduxToolkit/createSlice';
@@ -8,10 +8,7 @@ import ShimmerEffect from '@/pages/shimmer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 const CardData = ({ item, isLoading }: { item: ProductItemData, isLoading: boolean }) => {
-    const catdata = item?.category;
-  
     const dispatch = useAppDispatch();
     const handleClick = () => {
         dispatch(addToCart(item))

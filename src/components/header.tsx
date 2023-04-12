@@ -2,7 +2,7 @@
 import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from '../components/header.module.scss';
 import { FaShoppingCart } from 'react-icons/fa';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CartDetail from '../pages/cartdetails';
 import EmptyCart from '@/pages/emptycart';
 import Link from 'next/link';
@@ -10,26 +10,14 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {
     Box, SwipeableDrawer, Button, List, ListItem
 } from '@mui/material';
-
 import MenuItem from '@mui/material/MenuItem';
 import MobileResponsiveView from './headerMobile';
-import { useDispatch, useSelector } from 'react-redux';
-import { setFilterValue } from '@/ReduxToolkit/createSlice';
-// import { FilterValue } from '@/types/hometype';
+import { FilterContext } from '../components/contextapi';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 type Anchor = 'right';
 const Header = () => {
-    const dispatch = useDispatch();
-    const categoriesData = [
-        "women's clothing", "men's clothing", 'electronics', 'jewelery', 'all']
-
-    const handleFilterChange = (e: SelectChangeEvent<any>, child: React.ReactNode) => {
-        dispatch(setFilterValue(e.target.value.toLowerCase()));
-
-
-    };
-
-
+    const { filter, setFilter } = useContext(FilterContext);
+    const categoriesData = ['All', "Women's Clothing", "Men's Clothing", 'Electronics', 'Jewelery'];
 
     const [show, setShow] = useState(false);
     const [empty, setEmpty] = useState(false);
@@ -64,6 +52,7 @@ const Header = () => {
     useEffect(() => {
         handleClick();
     })
+
 
     const [state, setState] = React.useState({
         right: false,
@@ -105,27 +94,25 @@ const Header = () => {
 
         </Box>
     );
-    const { filterValue } = useSelector((state: any) => state.counter.filterValue);
+    const handleSelectChange = (
+        event: SelectChangeEvent<any>
+    ) => {
+        setFilter(event.target.value as string);
+    };
+
     return (
         <>
             <header className={styles.header}>
                 <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
                     <h3>Shopping View</h3>
-                    <div className={styles.content}>
-                        <li className={styles.mobiledata}>
-                            <MobileResponsiveView />
-                        </li>
-                    </div>
-
                     <div className={styles.dropdownData}>
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={filterValue} onChange={handleFilterChange}
+                            value={filter}
+                            onChange={handleSelectChange}
                         >
                             {categoriesData.map((id: any) => {
-
-
                                 return (
                                     <MenuItem value={id.toLowerCase()} key={id}>{id}</MenuItem>
                                 )
@@ -135,6 +122,13 @@ const Header = () => {
                         </Select>
 
                     </div>
+                    <div className={styles.content}>
+                        <li className={styles.mobiledata}>
+                            <MobileResponsiveView />
+                        </li>
+                    </div>
+
+                   
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
                         <ul className="navbar-nav">
 
