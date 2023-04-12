@@ -3,11 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CartState, Item } from '../types/hometype'
 const initialState: CartState = {
     items: [],
-    products: [],
-    isLoading: true,
-    filterValue: 'all',
-
-
 };
 
 const cartSlice = createSlice({
@@ -63,19 +58,11 @@ const cartSlice = createSlice({
         clearCart: state => {
             state.items = [];
         },
-        setProducts: (state, action) => {
-            state.products = action.payload;
-        },
-        setIsLoading: (state, action) => {
-            state.isLoading = action.payload;
-        },
-        setFilterValue: (state, action) => {
-            state.filterValue = action.payload;
-        },
+        
 
     }
 });
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeItem, clearCart, setProducts, setIsLoading, setFilterValue } = cartSlice.actions;
+export const { addToCart, incrementQuantity, decrementQuantity, removeItem, clearCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

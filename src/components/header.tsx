@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MobileResponsiveView from './headerMobile';
 import { FilterContext } from '../components/contextapi';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import PriceDetail from './priceDetail';
 type Anchor = 'right';
 const Header = () => {
     const { filter, setFilter } = useContext(FilterContext);
@@ -84,7 +85,17 @@ const Header = () => {
         >
             <List>
                 <ListItem disablePadding>
-                    {show && (<div className={styles.showdata}><CartDetail item={item} /></div>)}
+                    {show && (
+                        <>
+                            <div className={styles.priceInfo}>
+                                <div className={styles.showdata}>
+                                    <CartDetail item={item} />
+                                </div>
+                                <div className={styles.pricedata}>
+                                    <PriceDetail itemCount={itemCount} item={item}/>
+                                </div>
+                            </div>
+                        </>)}
                 </ListItem>
 
                 {empty && (<> <EmptyCart toggleDrawer={toggleDrawer} /></>)}
@@ -115,10 +126,7 @@ const Header = () => {
                                     <MenuItem value={id.toLowerCase()} key={id}>{id}</MenuItem>
                                 )
                             })}
-
-
                         </Select>
-
                     </div>
                     <div className={styles.content}>
                         <li className={styles.mobiledata}>
@@ -126,7 +134,7 @@ const Header = () => {
                         </li>
                     </div>
 
-                   
+
                     <div className={`${styles.content} collapse navbar-collapse`} id="navbarSupportedContent">
                         <ul className="navbar-nav">
 
@@ -156,11 +164,9 @@ const Header = () => {
                                                 onOpen={toggleDrawer(anchor, true)}
                                             >
                                                 <div className={styles.arrobtn}>
-                                                <ArrowBackIcon onClick={toggleDrawer(anchor, false)} />
+                                                    <ArrowBackIcon onClick={toggleDrawer(anchor, false)} />
                                                 </div>
-                                              
-
-                                                {list(anchor)}
+                                                <div> {list(anchor)}</div>
                                             </SwipeableDrawer>
                                         </React.Fragment>
                                     ))}

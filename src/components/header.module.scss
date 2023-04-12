@@ -1,7 +1,18 @@
 @import './varialbes/variable.scss';
 
-.header {
+.priceInfo {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  .pricedata {
+    position: fixed;
+    top: 0;
+    margin-left: 21rem;
+    margin-top: 2rem;
+  }
+}
 
+.header {
   position: relative;
   top: 0;
   left: 0;
@@ -53,6 +64,12 @@
             color: $white-color;
           }
 
+          .cart {
+            .priceInfo {
+              display: flex;
+              justify-content: center;
+            }
+          }
 
         }
 
@@ -61,10 +78,11 @@
           align-items: center;
           position: relative;
 
-         
+
           button {
             margin-top: -7px;
           }
+
 
         }
 

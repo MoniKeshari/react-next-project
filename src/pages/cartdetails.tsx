@@ -111,8 +111,8 @@ const CartDetail = ({ item }: { item: product }) => {
                 return (
                     <>
                         <div className={styles.container} key={id.id}>
-                                <div className={`${styles.wrapper} row `}>
-                                    <div className={`${styles.imgpic} col-md-2`}>
+                            <div className={`${styles.wrapper} row `}>
+                                <div className={styles.imgpic}>
                                     <Link href={`/cardpost/${id.id}`} >
                                         <Image
                                             src={id.image}
@@ -120,57 +120,59 @@ const CartDetail = ({ item }: { item: product }) => {
                                             width={200}
                                             height={200}
                                         />
-                                         </Link>
+                                    </Link>
+                                </div>
+
+
+                                <div className='row justify-content-center'>
+                                    <div className={styles.containerData} >
+                                        <ul>
+                                            <li>
+                                                <h6>{id.category}</h6>
+                                            </li>
+                                            <li>
+                                                <p className="card-text">
+                                                    <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
+                                                    <span className={styles.discountprice}>&#8377;{discountedPrice.toLocaleString()} </span>
+                                                </p>
+                                            </li>
+                                            {/* <li>
+                                                <p className={styles.desc}>{id.title}</p>
+                                            </li> */}
+                                        </ul>
                                     </div>
+                                </div>
+                                <div className={styles.datacontent}>
+                                    <div className={styles.paddingdata}>
+                                        <button className={styles.dec} onClick={() => dispatch(decrementQuantity(id.id))
+                                        }><span>-</span></button>
 
-                                    <div >
-                                        <div className='row justify-content-center'>
-                                            <div className={`${styles.containerData} `}>
-                                                <ul>
-                                                    <li>
-                                                        <h6>{id.category}</h6>
-                                                    </li>
-                                                    <li>
-                                                        <p className="card-text">
-                                                            <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
-                                                            <span className={styles.discountprice}>&#8377;{discountedPrice.toLocaleString()} </span>
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p className={styles.desc}>{id.title}</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div className={styles.datacontent}>
-                                            <div className={styles.paddingdata}> 
-                                                <button className={styles.dec} onClick={() => dispatch(decrementQuantity(id.id))
-                                            }><span>-</span></button>
+                                    </div>
+                                    <div className={styles.paddingdata}>
 
-                                            </div>
-                                            <div className={styles.paddingdata}> 
+                                        <span>{id.quantity}</span>
 
-                                                <span>{id.quantity}</span>
-                                               
-                                            </div>
-                                            <div className={styles.paddingdata}>  <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>+</span></button></div>
+                                    </div>
+                                    <div className={styles.paddingdata}>  <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>+</span></button></div>
 
-                                            <div className={styles.paddingdata}> 
-                                                <button className={styles.rem}
-                                                    onClick={() => handleRemoveCard(id.id)}
-                                                >
-                                                    Remove
-                                                </button>
-                                            </div>
-                                        </div>
+                                    <div className={styles.paddingdata}>
+                                        <button className={styles.rem}
+                                            onClick={() => handleRemoveCard(id.id)}
+                                        >
+                                            Remove
+                                        </button>
                                     </div>
                                 </div>
 
-                          
+
+                            </div>
+
+
                         </div>
                     </>
                 )
             })}
+
 
         </>
     )

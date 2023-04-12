@@ -24,7 +24,6 @@ export interface ProductItemData extends Item {
     quantity:number;
     rating:Rate;
     id:number;
-    filter:any;
    
     
 }
@@ -42,9 +41,7 @@ export type FilterValue = 'all' | "men's clothing" | 'jewelery' | 'electronics' 
 
 export interface CartState {
     items: Item[];
-    products: ProductItemData[];
-    isLoading: boolean;
-    filterValue: FilterValue;
+   
 }
 export interface User {
     userId: number;

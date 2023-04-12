@@ -1,0 +1,74 @@
+.container {
+    position: relative;
+    margin-right: 2rem;
+    margin-top: 3.5rem;
+
+    h3 {
+        color: darkgrey;
+        font-family: Roboto, Arial, sans-serif;
+        padding: 0.5rem;
+    }
+
+
+
+    .wrapper {
+        height: 320px;
+        width: 400px;
+        border-radius: 0.3rem;
+        border-style: groove;
+
+        .totalmath {
+            margin-top: 1rem;
+        }
+
+        p {
+            &.para {
+                border-top: 1px solid rgba($color: #b8abab, $alpha: 1.0);
+            }
+
+        }
+
+        ul {
+            &.totalamount {
+                li {
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-family: Roboto, Arial, sans-serif;
+
+            .itemdata {
+                font-weight:lighter;
+               
+               
+            }
+
+            span {
+                font-weight: bold;
+                color: #333;
+
+                &.rewardspoints,
+                &.deleverycharge,
+                &.discountdata {
+                    color: seagreen;
+                    font-family: Roboto, Arial, sans-serif;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+
+
+    }
+}
