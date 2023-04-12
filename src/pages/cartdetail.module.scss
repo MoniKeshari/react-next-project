@@ -10,7 +10,16 @@
 
 .wrapper {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+  
+   .datacontent{
+    display: flex;
+   flex-direction: row;
+   margin-left: 20px;
+   .paddingdata{
+    padding: 0.5rem;
+   }
+   }
 
     .imgpic {
         padding: 1rem;
@@ -24,7 +33,7 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             display: block;
-            margin-left: auto;
+            margin-left: 20px;
             margin-right: auto;
             object-fit: cover;
         }

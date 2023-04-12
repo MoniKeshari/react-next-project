@@ -83,7 +83,7 @@ const CartDetail = ({ item }: { item: product }) => {
                             <DialogContent dividers>
 
                                 <Typography gutterBottom>
-                                Are you sure you want to remove this item?
+                                    Are you sure you want to remove this item?
                                 </Typography>
                                 <Typography gutterBottom>
                                     Product Id: {selectedData}
@@ -111,23 +111,21 @@ const CartDetail = ({ item }: { item: product }) => {
                 return (
                     <>
                         <div className={styles.container} key={id.id}>
-
-                            <Link href={`/cardpost/${id.id}`} >
-
                                 <div className={`${styles.wrapper} row `}>
-                                    <div className={`${styles.imgpic} col-md-4`}>
+                                    <div className={`${styles.imgpic} col-md-2`}>
+                                    <Link href={`/cardpost/${id.id}`} >
                                         <Image
                                             src={id.image}
                                             alt="Description of the image"
                                             width={200}
                                             height={200}
                                         />
+                                         </Link>
                                     </div>
 
-                                    <div className='col-md-8 mt-5 '>
+                                    <div >
                                         <div className='row justify-content-center'>
-
-                                            <div className={`${styles.containerData} col-md-4`}>
+                                            <div className={`${styles.containerData} `}>
                                                 <ul>
                                                     <li>
                                                         <h6>{id.category}</h6>
@@ -143,29 +141,32 @@ const CartDetail = ({ item }: { item: product }) => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className='col-md-2 '> <button className={styles.dec} onClick={() => dispatch(decrementQuantity(id.id))
+                                        </div>
+                                        <div className={styles.datacontent}>
+                                            <div className={styles.paddingdata}> 
+                                                <button className={styles.dec} onClick={() => dispatch(decrementQuantity(id.id))
                                             }><span>-</span></button>
 
                                             </div>
-                                            <div className={`${styles.quantity} col-md-2`}>
+                                            <div className={styles.paddingdata}> 
 
                                                 <span>{id.quantity}</span>
-
+                                               
                                             </div>
-                                            <div className='col-md-2 '> <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>+</span></button></div>
+                                            <div className={styles.paddingdata}>  <button className={styles.inc} onClick={() => dispatch(incrementQuantity(id.id))}><span>+</span></button></div>
 
-                                            <div className='col-md-2 '>
+                                            <div className={styles.paddingdata}> 
                                                 <button className={styles.rem}
                                                     onClick={() => handleRemoveCard(id.id)}
                                                 >
                                                     Remove
                                                 </button>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
+
+                          
                         </div>
                     </>
                 )

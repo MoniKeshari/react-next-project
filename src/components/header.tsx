@@ -77,14 +77,12 @@ const Header = () => {
     const list = (anchor: Anchor) => (
 
         <Box
-            sx={{ width: 800 }}
+            sx={{ width: 750 }}
             role="presentation"
             onClick={cartPresent ? () => { } : toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-
-
                 <ListItem disablePadding>
                     {show && (<div className={styles.showdata}><CartDetail item={item} /></div>)}
                 </ListItem>
@@ -157,7 +155,10 @@ const Header = () => {
                                                 onClose={toggleDrawer(anchor, true)}
                                                 onOpen={toggleDrawer(anchor, true)}
                                             >
+                                                <div className={styles.arrobtn}>
                                                 <ArrowBackIcon onClick={toggleDrawer(anchor, false)} />
+                                                </div>
+                                              
 
                                                 {list(anchor)}
                                             </SwipeableDrawer>
