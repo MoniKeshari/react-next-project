@@ -83,10 +83,10 @@ const CartDetail = ({ item }: { item: product }) => {
                             <DialogContent dividers>
 
                                 <Typography gutterBottom>
-                                    Are You Sure To Remove This Item.
+                                    are you sure to remove selected product from cart?.
                                 </Typography>
                                 <Typography gutterBottom>
-                                    Product Id:{selectedData}
+                                    Product Id: {selectedData}
                                 </Typography>
                             </DialogContent>
                             <DialogActions>
