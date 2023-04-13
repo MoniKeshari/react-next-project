@@ -132,13 +132,10 @@ const CartDetail = ({ item }: { item: product }) => {
                                             </li>
                                             <li>
                                                 <p className="card-text">
-                                                    <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
-                                                    <span className={styles.discountprice}>&#8377;{discountedPrice.toLocaleString()} </span>
+                                                    <span className={styles.originalPrice}> &#8377;{(originalPrice * id.quantity).toFixed(2)}</span>
+                                                    <span className={styles.discountprice}>&#8377;{(discountedPrice * id.quantity).toFixed(2)} </span>
                                                 </p>
                                             </li>
-                                            {/* <li>
-                                                <p className={styles.desc}>{id.title}</p>
-                                            </li> */}
                                         </ul>
                                     </div>
                                 </div>
