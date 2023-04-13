@@ -26,7 +26,7 @@ const cartSlice = createSlice({
                 }
 
             } else {
-                state.items.push({ ...action.payload, quantity: 1 });
+                state.items.push({ ...action.payload, quantity: 1});
 
             }
         },
@@ -57,7 +57,7 @@ const cartSlice = createSlice({
         removeItem: (state, action) => {
             const removedItem = state.items.find((item) => item.id === action.payload);
             if (removedItem) {
-                state.totalprice = removedItem.quantity;
+                state.totalprice = removedItem.quantity-1;
                 state.items = state.items.filter((item) => item.id !== action.payload);
             }
         },
