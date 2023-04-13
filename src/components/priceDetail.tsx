@@ -3,7 +3,7 @@ import styles from './price.module.scss';
 const PriceDetail = ({ itemCount, item }: any) => {
     const resdata=useAppSelector((state)=>state.counter.totalprice)
     const totalPrice = item.reduce((acc: any, product: any) => acc + product.price, resdata);
-    const discountPercentage = 10; // assuming 10% discount
+    const discountPercentage = 2;
     const totaldiscountPrice = totalPrice - (totalPrice * (discountPercentage / 100));
     const discountprice = totalPrice - totaldiscountPrice;
     const totalcurrencyamount = totaldiscountPrice - discountprice;

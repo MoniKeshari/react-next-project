@@ -35,8 +35,8 @@ const CardData = ({ item, isLoading }: { item: ProductItemData, isLoading: boole
                             <h5 className="card-title">{item.category}</h5>
 
                             <p className="card-text">
-                                <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
-                                <span className={styles.discountprice}>&#8377;{discountedPrice.toLocaleString()} </span>
+                                <span className={styles.originalPrice}> &#8377;{originalPrice.toFixed(2).toLocaleString()}</span>
+                                <span className={styles.discountprice}>&#8377;{discountedPrice.toFixed(2).toLocaleString()} </span>
                             </p>
 
                             <p>{discountPercentage}% off</p>

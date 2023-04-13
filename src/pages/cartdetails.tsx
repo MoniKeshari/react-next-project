@@ -104,9 +104,8 @@ const CartDetail = ({ item }: { item: product }) => {
             }
             {item?.map((id: ProductItemData) => {
                 const originalPrice = id.price;
-                const discountPercentage = 10; // assuming 10% discount
+                const discountPercentage = 2;
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
-
 
                 return (
                     <>
@@ -132,8 +131,8 @@ const CartDetail = ({ item }: { item: product }) => {
                                             </li>
                                             <li>
                                                 <p className="card-text">
-                                                    <span className={styles.originalPrice}> &#8377;{originalPrice.toLocaleString()}</span>
-                                                    <span className={styles.discountprice}>&#8377;{discountedPrice.toLocaleString()} </span>
+                                                    <span className={styles.originalPrice}> &#8377;{(originalPrice.toFixed(2).toLocaleString())}</span>
+                                                    <span className={styles.discountprice}>&#8377;{discountedPrice.toFixed(2).toLocaleString()} </span>
                                                 </p>
                                             </li>
                                         </ul>
