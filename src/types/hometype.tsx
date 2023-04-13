@@ -41,6 +41,7 @@ export type FilterValue = 'all' | "men's clothing" | 'jewelery' | 'electronics' 
 
 export interface CartState {
     items: Item[];
+    totalprice:number;
    
 }
 export interface User {

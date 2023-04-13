@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CartState, Item } from '../types/hometype'
 const initialState: CartState = {
     items: [],
+    totalprice: 0
 };
 
 const cartSlice = createSlice({
@@ -33,6 +34,7 @@ const cartSlice = createSlice({
             if (item)
                 if (item.quantity !== undefined) {
                     item.quantity++;
+                    state.totalprice += item.price
                 }
 
         },
@@ -44,6 +46,8 @@ const cartSlice = createSlice({
                 } else {
                     if (item.quantity !== undefined)
                         item.quantity--;
+                    state.totalprice -= item.price
+
                 }
 
             }
@@ -58,11 +62,11 @@ const cartSlice = createSlice({
         clearCart: state => {
             state.items = [];
         },
-        
+
 
     }
 });
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeItem, clearCart} = cartSlice.actions;
+export const { addToCart, incrementQuantity, decrementQuantity, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
