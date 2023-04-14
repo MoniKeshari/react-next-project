@@ -1,5 +1,5 @@
-
 @import '../components/varialbes/variable.scss';
+
 .content1 {
     height: 200px;
     width: 100px;
@@ -16,16 +16,29 @@
     background-color: $yellow-color;
     position: absolute;
     z-index: 1;
-    
-
 }
+
 .content3 {
     height: 100px;
     width: 100px;
-    background-color:$red-color;
+    background-color: $red-color;
     position: absolute;
     z-index: 2;
-   
+}
 
-
+.scrollbtn {
+    display: flex;
+    justify-content: right;
+    padding: 1rem;
+    button {
+        border-radius: 1rem;
+            border-color: transparent;
+            background-color: #333;
+            svg{
+                vertical-align: text-top;
+                color: white;
+                font-weight: bold;
+            }
+     
+    }
 }

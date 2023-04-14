@@ -7,13 +7,13 @@ export interface Item {
     price: number;
     title: string;
     category: string;
-    rating:Rate;
-    filter:any;
-    
-  
+    rating: Rate;
+    filter: any;
+
+
 }
-interface Rate{
-    rate:number;
+interface Rate {
+    rate: number;
 }
 export interface ProductItemData extends Item {
     category: string;
@@ -21,28 +21,28 @@ export interface ProductItemData extends Item {
     image: string;
     price: number;
     title: string;
-    quantity:number;
-    rating:Rate;
-    id:number;
-   
-    
-}
+    quantity: number;
+    rating: Rate;
+    id: number;
 
-interface Params{
-    params:number;
-    pageno:number;
 
 }
-export interface ContextData{
-    params:Params;
+
+interface Params {
+    params: number;
+    pageno: number;
+
+}
+export interface ContextData {
+    params: Params;
 }
 export type product = ProductItemData[];
 export type FilterValue = 'all' | "men's clothing" | 'jewelery' | 'electronics' | "women's clothing";
 
 export interface CartState {
     items: Item[];
-    totalprice:number;
-   
+    totalprice: number;
+
 }
 export interface User {
     userId: number;
@@ -66,3 +66,7 @@ export interface CarouselItemData {
     title: string;
 }
 export type carouselItem = CarouselItemData[];
+export interface Variants {
+    hide: any;
+    show: any;
+}
