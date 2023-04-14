@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    flex-direction: row;
+    gap: 3rem;
+    background-color:rgb(253, 251, 249);
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5rem;
+        padding: 1.1rem;
+        margin: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .container {
+        margin-left: 26px;
+        text-transform: capitalize;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+
+     
+    }
+
+   
+}
+.wrapper:hover img {
+    transform: scale(1.05);
+}

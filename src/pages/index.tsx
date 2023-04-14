@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { FilterContext } from "@/components/contextapi";
 import ScrollToTopButton from "@/components/scroll/scrollbtn";
 import styles from './index.module.scss'
+import MiniNavBar from "@/components/mininavbar.tsx/mininavbar";
 
 export const getStaticProps = async () => {
     const data = await fetch('https://fakestoreapi.com/products');
@@ -52,7 +53,9 @@ const Home = ({ res }: { res: product }) => {
                         Home Page
                     </title>
                 </Head>
+                <MiniNavBar res={res}/>
                 < ControlledCarousel isLoading={isLoading} />
+             
                 <div className={styles.scrollbtn}>
                     <ScrollToTopButton  /></div>
                 <div>
