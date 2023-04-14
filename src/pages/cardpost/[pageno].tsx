@@ -32,7 +32,7 @@ export async function getStaticProps(context: ContextData) {
 const CardPost = ({ postcard }: { postcard: ProductItemData }) => {
     const { id, description, image, category, title, price, rating } = postcard;
     const originalPrice = price;
-    const discountPercentage = 10; // assuming 10% discount
+    const discountPercentage = 2; // assuming 10% discount
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
     const ratingVisual = rating?.rate >= 4;
     const [isLoading, setLoading] = useState(true);
