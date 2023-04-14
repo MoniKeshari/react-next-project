@@ -6,7 +6,7 @@ const PriceDetail = ({ itemCount, item }: any) => {
     const discountPercentage = 2;
     const totaldiscountPrice = totalPrice - (totalPrice * (discountPercentage / 100));
     const discountprice = totalPrice - totaldiscountPrice;
-    const totalcurrencyamount = totaldiscountPrice - discountprice;
+    const totalamountdata = totalPrice - discountprice;
 
     return (
         <>
@@ -17,7 +17,7 @@ const PriceDetail = ({ itemCount, item }: any) => {
                     <ul className="list">
                         <li>
                             <span className={styles.itemdata}>Price ({itemCount} Items)</span>
-                            <span className={styles.itemdata}>&#8377; {totaldiscountPrice.toFixed(2)}</span>
+                            <span className={styles.itemdata}>&#8377; {totalPrice.toFixed(2)}</span>
                         </li>
                         <li>
                             <span className={styles.itemdata}>Discount</span>
@@ -32,7 +32,7 @@ const PriceDetail = ({ itemCount, item }: any) => {
                         <ul className={styles.totalamount}>
                             <li>
                                 <span className="item">Total Amount</span>
-                                <span className="value">&#8377; {totalcurrencyamount.toFixed(2)}</span>
+                                <span className="value">&#8377; {totalamountdata.toFixed(2)}</span>
                             </li>
 
                         </ul>
