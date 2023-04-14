@@ -1,16 +1,11 @@
 import CardData from "@/components/locationcard/card";
-import { product, ProductItemData, Variants } from "@/types/hometype";
+import { product, ProductItemData } from "@/types/hometype";
 import ControlledCarousel from "@/components/carousel";
 import Head from "next/head";
 import { useContext, useEffect, useState } from "react";
 import { FilterContext } from "@/components/contextapi";
 import ScrollToTopButton from "@/components/scroll/scrollbtn";
 import styles from './index.module.scss'
-import { useAnimationControls, useScroll } from "framer-motion";
-
-
-
-
 
 export const getStaticProps = async () => {
     const data = await fetch('https://fakestoreapi.com/products');
@@ -22,9 +17,6 @@ export const getStaticProps = async () => {
         }
     }
 }
-
-
-
 
 const Home = ({ res }: { res: product }) => {
     const [isLoading, setLoading] = useState(true);
@@ -52,34 +44,6 @@ const Home = ({ res }: { res: product }) => {
 
     }, [filter, res])
 
-    const isBrowser = () => typeof window !== 'undefined';
-    const ScrollToTopContainerVariants: Variants = {
-        hide: { opacity: 0, y: 100 },
-        show: { opacity: 1, y: 0 },
-    };
-    const { scrollYProgress } = useScroll();
-    const controls = useAnimationControls();
-
-    useEffect(() => {
-        return scrollYProgress.on('change', (latestValue) => {
-            if (latestValue > 0.5) {
-                controls.start('show');
-            } else {
-                controls.start('hide');
-            }
-        });
-    });
-
-
-    const scrollToTop = () => {
-        if (isBrowser()) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        else {
-            return;
-        }
-    }
     return (
         <>
             <div>
@@ -89,7 +53,8 @@ const Home = ({ res }: { res: product }) => {
                     </title>
                 </Head>
                 < ControlledCarousel isLoading={isLoading} />
-
+                <div className={styles.scrollbtn}>
+                    <ScrollToTopButton  /></div>
                 <div>
                     <section className='py-4 container'>
                         <div className='row justify-content-center'>
@@ -105,8 +70,7 @@ const Home = ({ res }: { res: product }) => {
                             }
                         </div>
                     </section>
-                    <div className={styles.scrollbtn}>
-                        <ScrollToTopButton scrollToTop={scrollToTop} ScrollToTopContainerVariants={ScrollToTopContainerVariants} controls={controls} /></div>
+
 
                 </div>
 

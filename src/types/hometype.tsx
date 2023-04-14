@@ -66,7 +66,7 @@ export interface CarouselItemData {
     title: string;
 }
 export type carouselItem = CarouselItemData[];
-export interface Variants {
+export interface Variant {
     hide: any;
     show: any;
 }

@@ -30,15 +30,21 @@
     display: flex;
     justify-content: right;
     padding: 1rem;
+    position: fixed;
+    bottom: 150px;
+    right: 20px;
+    z-index: 9999;
+
     button {
         border-radius: 1rem;
-            border-color: transparent;
-            background-color: #333;
-            svg{
-                vertical-align: text-top;
-                color: white;
-                font-weight: bold;
-            }
-     
+        border-color: transparent;
+        background-color: #333;
+
+        svg {
+            vertical-align: text-top;
+            color: white;
+            font-weight: bold;
+        }
+
     }
 }
