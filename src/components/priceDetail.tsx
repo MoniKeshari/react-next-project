@@ -1,7 +1,10 @@
 import styles from './price.module.scss';
 const PriceDetail = ({ itemCount, item }: any) => {
     const totalPrice = item.reduce((acc: any, product: any) => acc + product.price * product.quantity, 0);
-    const discountPercentage = 2;
+    let discountPercentage = 2;
+    if (totalPrice >= 40) {
+        discountPercentage = 4;
+    }
     const totaldiscountPrice = totalPrice - (totalPrice * (discountPercentage / 100));
     const discountprice = totalPrice - totaldiscountPrice;
     const totalamountdata = totalPrice - discountprice;

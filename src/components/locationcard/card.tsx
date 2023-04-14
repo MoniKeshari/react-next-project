@@ -16,7 +16,10 @@ const CardData = ({ item, isLoading }: { item: ProductItemData, isLoading: boole
     const rating = item?.rating?.rate;
     const ratingVisual = item?.rating?.rate >= 4;
     const originalPrice = item.price;
-    const discountPercentage = 2;
+    let discountPercentage = 2;
+    if (originalPrice >= 40) {
+        discountPercentage = 4;
+    }
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
     return (
         <>

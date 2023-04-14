@@ -104,7 +104,10 @@ const CartDetail = ({ item }: { item: product }) => {
             }
             {item?.map((id: ProductItemData) => {
                 const originalPrice = id.price;
-                const discountPercentage = 2;
+                let discountPercentage = 2;
+                if (originalPrice >= 40) {
+                    discountPercentage = 4;
+                }
                 const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
 
                 return (
