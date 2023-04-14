@@ -1,4 +1,3 @@
-import { useAppSelector } from '@/ReduxToolkit/hooks';
 import styles from './price.module.scss';
 const PriceDetail = ({ itemCount, item }: any) => {
     const totalPrice = item.reduce((acc: any, product: any) => acc + product.price * product.quantity, 0);

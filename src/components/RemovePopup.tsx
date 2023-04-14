@@ -49,9 +49,6 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 }
 
 const RemovePopupDisplay = ({id, handleClickOpen, handleClose, open}:any) => {
-    console.log(open, 'open');
-    
-  
     return (
         <div>
             <Button variant="outlined" onClick={handleClickOpen}>
