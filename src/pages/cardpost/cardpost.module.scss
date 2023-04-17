@@ -43,8 +43,8 @@
 
     .imgpic {
         padding: 1rem;
-
-
+        overflow-x: scroll;
+        flex-wrap: nowrap;
         img {
             width: fit-content;
             cursor: pointer;
