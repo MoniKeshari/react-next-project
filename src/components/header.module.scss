@@ -172,6 +172,12 @@
 
   .header {
     .wrapper {
+      .dropdownData {
+        margin-left: 0;
+        
+    
+    
+      }
       .content {
         display: flex;
         justify-content: flex-end;
@@ -192,4 +198,14 @@
     }
   }
 
+}
+@media (max-width: 286px) {
+  .wrapper {
+    .dropdownData {
+      margin-right: 9px;
+      
+  
+  
+    }
+  }
 }
