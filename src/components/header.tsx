@@ -112,7 +112,9 @@ const Header = () => {
     return (
         <>
             <header className={styles.header}>
+              
                 <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light bg-dark`}>
+              
                     <h3>Shopping View</h3>
                     <div className={styles.dropdownData}>
                         <Select
@@ -178,8 +180,10 @@ const Header = () => {
                         </ul>
 
                     </div>
-
+                  
                 </nav>
+              
+              
             </header>
         </>
     )
