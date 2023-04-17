@@ -109,3 +109,24 @@
 .cardData:hover img {
     transform: scale(1.05);
 }
+
+
+@media (max-width:241px){
+    .cardFooter {
+        button {
+
+            &.buttondec {
+              
+               svg {
+                vertical-align: text-top !important;
+                margin-left: 3px !important;
+               
+            }
+
+            }
+           
+        }
+    }
+    
+    
+}
