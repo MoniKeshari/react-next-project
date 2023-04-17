@@ -72,7 +72,7 @@ const MobileResponsiveView = () => {
         <div>
             {(['top'] as const).map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}>  <MenuIcon /></Button>
+                    <Button onClick={toggleDrawer(anchor, true)}>  <MenuIcon  className={styles.btnmenu} /></Button>
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}

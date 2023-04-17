@@ -1,5 +1,12 @@
 @import './varialbes/variable.scss';
 
+.btnmenu{
+  color: $white-color;
+  &:hover {
+    color: $white-color;
+  }
+}
+
 .priceInfo {
   display: flex;
   justify-content: space-between;
