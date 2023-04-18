@@ -53,7 +53,7 @@ const Home = ({ res }: { res: product }) => {
                         Home Page
                     </title>
                 </Head>
-                <MiniNavBar res={res}/>
+                <MiniNavBar res={res} isLoading={isLoading}/>
                 < ControlledCarousel isLoading={isLoading} />
              
                 <div className={styles.scrollbtn}>
