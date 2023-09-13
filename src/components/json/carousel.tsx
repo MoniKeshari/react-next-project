@@ -101,5 +101,4 @@ const carousel: carouselItem =
         }
 
     ]
-
 export default carousel;
